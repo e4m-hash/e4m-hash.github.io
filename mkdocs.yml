@@ -1,0 +1,79 @@
+site_name: e4m Portfolio
+site_url: https://e4m-hash.github.io
+
+# Obsidian 첨부 폴더는 이미지 보관용 — .md 가 들어와도 페이지로 빌드되지 않도록 제외
+# (이미지 등 비-마크다운 파일은 정상 복사되어 노트에서 참조됨)
+exclude_docs: |
+  **/attachments/*.md
+
+theme:
+    name: 'material'
+    language: ko
+    palette:
+
+    # Light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: pink
+      accent: indigo
+      toggle:
+        icon: material/toggle-switch-off-outline
+        name: Switch to dark mode
+
+    # Dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: pink
+      accent: blue
+      toggle:
+        icon: material/toggle-switch
+        name: Switch to light mode
+
+# Obsidian 호환: 빌드 시 $$ 수식 블록·표 주위에 빈 줄을 보장해 블록 인식 오류 방지
+hooks:
+  - hooks/obsidian_compat.py
+
+# Extensions
+markdown_extensions:
+  - tables          # GFM 표 렌더링 (없으면 | ... | 가 원문 텍스트로 깨짐)
+  - footnotes
+  # - attr_list
+  - pymdownx.arithmatex:
+      generic: true
+  # - pymdownx.superfences
+  # - pymdownx.details
+  # - pymdownx.magiclink
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - def_list
+  - pymdownx.critic
+  - pymdownx.caret
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.tilde
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+
+  - toc:
+      permalink: true
+
+plugins:
+  - search
+  - roamlinks
+  - blog
+  - rss:
+      match_path: blog/posts/.*
+      date_from_meta:
+        as_creation: date
+      categories:
+        - categories
+        - tags
+
+extra_javascript:
+  - javascripts/mathjax.js
+  - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
+  - https://unpkg.com/mermaid/dist/mermaid.min.js
+

@@ -1,0 +1,25 @@
+---
+date: 2026-06-01
+slug: hello-world
+categories:
+  - 일반
+tags:
+  - 시작
+  - 안내
+---
+
+# 첫 번째 글
+
+블로그를 시작합니다. 이 글은 포스트 작성 방법을 보여주는 예시입니다.
+
+<!-- more -->
+
+## 새 글을 쓰려면
+
+`docs/blog/posts/` 폴더에 마크다운 파일을 추가하고, 상단 frontmatter에 `date`를 지정하세요.
+
+- `categories`, `tags`로 분류할 수 있습니다.
+- `<!-- more -->` 위쪽 내용이 목록에서 보이는 발췌문이 됩니다.
+- `draft: true`를 넣으면 배포에서 제외되어 초안으로 남습니다.
+
+> Obsidian에서 그대로 작성한 뒤 push하면 GitHub Actions가 자동으로 발행합니다.
