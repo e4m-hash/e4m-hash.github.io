@@ -1,0 +1,2245 @@
+
+<!doctype html>
+<html lang="ko" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://e4m-hash.github.io/notes/statistics/Sections/%EC%86%8C%EA%B0%9C/">
+      
+      
+        <link rel="prev" href="../%EC%83%9D%EC%A1%B4%EB%B6%84%EC%84%9D/">
+      
+      
+        <link rel="next" href="../%EC%A7%91%EB%8B%A8%EC%9D%98%20%EB%B9%84%EA%B5%90/">
+      
+      
+        
+      
+      
+        <link rel="alternate" type="application/rss+xml" title="RSS 피드 생성완료" href="../../../../feed_rss_created.xml">
+        <link rel="alternate" type="application/rss+xml" title="RSS 피드 업데이트완료" href="../../../../feed_rss_updated.xml">
+      
+      <link rel="icon" href="../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Introduction - e4m Portfolio</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="pink" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#introduction" class="md-skip">
+          콘텐츠로 이동
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="상단/헤더">
+    <a href="../../../.." title="e4m Portfolio" class="md-header__button md-logo" aria-label="e4m Portfolio" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            e4m Portfolio
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Introduction
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="pink" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6m0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4M7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="pink" data-md-color-accent="blue"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="검색" placeholder="검색" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="검색">
+        
+        <button type="reset" class="md-search__icon md-icon" title="지우기" aria-label="지우기" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            검색 초기화
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="네비게이션" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../.." title="e4m Portfolio" class="md-nav__button md-logo" aria-label="e4m Portfolio" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    e4m Portfolio
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    포트폴리오
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../about/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    소개
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Blog
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Blog
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../blog/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    블로그
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    아카이브
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    아카이브
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../blog/archive/2026/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2026
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    카테고리
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    카테고리
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../blog/category/%EC%9D%BC%EB%B0%98/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    일반
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Notes
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Notes
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    노트
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ai
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Ai
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ai/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Features
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Features
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../features/LaTeX%20%EC%88%98%EC%8B%9D%20%EC%A7%80%EC%9B%90/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    LaTeX 수식 지원
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../features/Mermaid%20%EB%8B%A4%EC%9D%B4%EC%96%B4%EA%B7%B8%EB%9E%A8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mermaid 다이어그램
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4_4" id="__nav_4_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Statistics
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Statistics
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    통계
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_4_2" id="__nav_4_4_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Analysis
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Analysis
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Analysis/bweight/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    통계분석
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Analysis/%EA%B3%B5%EB%B6%84%EC%82%B0%20%EB%B6%84%EC%84%9D/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    공분산 분석
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Analysis/%EB%A1%9C%EC%A7%93%20%EB%B6%84%EC%84%9D/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    로짓 분석
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Analysis/%EB%B0%98%EB%B3%B5%EC%B8%A1%EC%A0%95%EC%9E%90%EB%A3%8C%EB%B6%84%EC%84%9D/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    반복측정 자료분석
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Analysis/%EB%B6%84%ED%95%A0%ED%91%9C%20%EB%B6%84%EC%84%9D/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    분할표 분석
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Analysis/%EC%83%9D%EC%A1%B4%EB%B6%84%EC%84%9D/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    생존분석
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Analysis/%EC%A7%91%EB%8B%A8%EC%9D%98%20%EB%B9%84%EA%B5%90/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    집단의 비교
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4_2_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_4_2_8" id="__nav_4_4_2_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Prove
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_4_4_2_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_4_2_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Prove
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Analysis/Prove/OR%20%EC%9D%98%20%EB%B6%84%EC%82%B0%20%EC%9C%A0%EB%8F%84/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OR 의 분산 유도
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Analysis/Prove/RR%20%EC%9D%98%20%EB%B6%84%EC%82%B0%20%EC%9C%A0%EB%8F%84/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    RR 의 분산 유도
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4_4_3" id="__nav_4_4_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sections
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_4_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Sections
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%EB%A1%9C%EC%A7%93%EB%B6%84%EC%84%9D/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Logit Analysis
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%EB%B0%98%EB%B3%B5%EC%B8%A1%EC%A0%95%20%EC%9E%90%EB%A3%8C%EB%B6%84%EC%84%9D/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Repeated Measures ANOVA
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%EB%B6%84%ED%95%A0%ED%91%9C%EB%B6%84%EC%84%9D/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contingency Table
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%EC%83%9D%EC%A1%B4%EB%B6%84%EC%84%9D/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Survival Analysis
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introduction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%EC%A7%91%EB%8B%A8%EC%9D%98%20%EB%B9%84%EA%B5%90/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Group Comparison
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Projects
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Projects
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../projects/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    프로젝트
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../projects/FunOMIC2%20Nextflow%20Pipeline/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FunOMIC2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../projects/KLAS%20%28bibliographic%20information%29%20Macro/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    KLAS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../projects/KT%20Aivle%20Big%20Project/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    KT Aivle
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="목차">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h1>
+<h1 id="_1">생명과학 안에서의 통계학의 역할<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<ul>
+<li>생명현상은 변이가 크고, 불확실성이 많음</li>
+<li>실험결과가 "우연인지, 실제 효과인지" 구분해야함</li>
+<li>연구 질문(가설 설정) -&gt; 데이터 수집 -&gt; 통계 분석 -&gt; 해석 및 결론</li>
+</ul>
+<h2 id="_2">연구 목적<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<h3 id="descriptive-purpose">모수 추정 Descriptive Purpose<a class="headerlink" href="#descriptive-purpose" title="Permanent link">&para;</a></h3>
+<p>질병의 발생률, 유병률, 평균 생존 기간, 삶의 질 지표
+기술/코호트 연구 활용</p>
+<h3 id="_3">인과 관계 규명<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<p>특정 위험 요인이 질병 발생과 관련이 있는가?
+관찰연구 (cohort , case-control) 활용</p>
+<h3 id="_4">중재 효과 평가<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<p>새로운 치료법, 약물, 생활습관의 개입의 효과 및 안정성 검증
+중재 -&gt; 인위적 처리의 영향력 평가
+무작위 배정 임상시험 (RCT) 활용</p>
+<h2 id="_5">임상 연구 유형<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>종류</th>
+<th>형식</th>
+<th>시간성</th>
+<th>방향</th>
+<th>과거</th>
+<th>현재</th>
+<th>미래</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>단면</td>
+<td>관측</td>
+<td>단면</td>
+<td>단면</td>
+<td></td>
+<td>모든 정보 수집</td>
+<td></td>
+</tr>
+<tr>
+<td>코호트</td>
+<td>관측</td>
+<td>종적</td>
+<td>전향적</td>
+<td></td>
+<td>코호트구성,위험요인 평가</td>
+<td>결과 관찰</td>
+</tr>
+<tr>
+<td>사례대조</td>
+<td>관측</td>
+<td>종적</td>
+<td>후향적</td>
+<td>위험요인평가</td>
+<td>사례군 및 대조군 정의</td>
+<td></td>
+</tr>
+<tr>
+<td>실험</td>
+<td>실험</td>
+<td>종적</td>
+<td>전향적</td>
+<td></td>
+<td>중재 실시</td>
+<td>결과 관찰</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_6">단면연구<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<ul>
+<li>특정 시점에서 질병 유병률, 위험요인 파악 </li>
+<li>인과관계 규명에는 한계, 연관성 여부만 확인 가능 </li>
+<li>일반적으로 빠르고 쉽게 수행 가능 </li>
+<li>예: 설문조사, 센서스, 한국인의 HIV 발현률</li>
+</ul>
+<h3 id="_7">종적연구<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
+<ul>
+<li>동일한 연구대상자들을 시간에 흐름에 따라 추적하는 연구<ul>
+<li>전향적: 대부분 종적 연구 <ul>
+<li>특정 시점을 기준으로 연구대상자들을 시간의 흐름에 맞춰 앞으로 조사</li>
+</ul>
+</li>
+<li>후향적 <ul>
+<li>연구대상자들을 모집 후 이들이 과거에 경험했던 요인들을 거꾸로 추적 조사</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="_8">관찰연구<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
+<ul>
+<li>연구자가 개입 또는 중재 (Intervention)하지 않고,대상자의 특성과 결과를 관찰 </li>
+<li>
+<p>요인통제가 불가능. 따라서, 인과관계 추론에 한계 (혼란변수, bias 존재)</p>
+</li>
+<li>
+<p>사례-대조 연구 (Case-Control Study</p>
+<ul>
+<li>희귀 질병이나 경과기간이 긴 연구에 효율적으로 이용되는 후향적 연구<ul>
+<li>예: 심장 발작을 겪은 사람들 (사례군) vs 그렇지 않은 사람들 (대조군)</li>
+<li>심장발작과 약물 남용간의 인과관계에 대한 추론</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>코호트 연구 (Cohort Study)
+    같은 특성을 가진 집단을 일정기간 추적 조사하는 전향적 연구</p>
+<ul>
+<li>환자 선정 제어가 가능하여 관찰 연구 중 인과 관계 추론에 가장 이상적</li>
+<li>추적 중간에 사망이나 협조 거부 등으로 중도 탈락이 발생하여 연구관리에 어려움</li>
+<li>예: 비흡연자 집단 v.s. 흡연자 집단</li>
+<li>20년 추적 조사하여 폐암 발생 여부 조사로 흡연이 폐암에 영향을 미치는 영향 추론</li>
+</ul>
+</li>
+</ul>
+<h3 id="_9">실험연구<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
+<p>연구자가 의도적으로 개입하여, 관심있는 약물이나 또는 방법 등의 처리(treatment)를 연구 대상자에게 실시한 후 효과를 측정함으로써 처리와 반응간 인과관계 규명</p>
+<ul>
+<li>대조군과 비교하여 효과 검증 가능</li>
+<li>임상시험 (Clinical Trial)이 대표적 형태</li>
+<li>대조군 연구 (Controlled Trial): 대조군 (위약, 표준치료) 설정</li>
+<li>무작위배정 임상시험 (RCT): 무작위화, 눈가림을 통해 bias 최소화</li>
+</ul>
+<h2 id="_10">임상 시험 단계<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h2>
+<p>-&gt; 최종 상용화 까지 평균 성공률 9.6%</p>
+<h3 id="1-phase-i">1상 ( Phase I )<a class="headerlink" href="#1-phase-i" title="Permanent link">&para;</a></h3>
+<ul>
+<li>대상 : 소수의 건강한 지원자 ( 20 ~ 80 )</li>
+<li>목적 : 안정성 (Safety) , 독성 , 최대내약용량 (MTD) 확인</li>
+<li>성공률 : 60%</li>
+</ul>
+<h3 id="2-phase-ii">2상 ( Phase II )<a class="headerlink" href="#2-phase-ii" title="Permanent link">&para;</a></h3>
+<ul>
+<li>대상 : 환자 수십 ~ 수백명</li>
+<li>목적 : 초기 유효성 (efficacy) , 적정용량 , 부작용 탐색</li>
+<li>소규모 무자귀 배정 시험 포함 가능</li>
+<li>성공률 : 30%</li>
+</ul>
+<h3 id="3-phase-iii">3상 ( Phase III )<a class="headerlink" href="#3-phase-iii" title="Permanent link">&para;</a></h3>
+<ul>
+<li>대상 : 대규모 환자군 ( 수백 ~ 수천명 )</li>
+<li>목적 : 표준치료 대비 효과 및 안정성 비교 (허가 근거)</li>
+<li>무작위 배정 및 이중 눈가림 RCT</li>
+<li>성공률 : 60%</li>
+</ul>
+<h3 id="4-phase-iv">4상 ( Phase IV )<a class="headerlink" href="#4-phase-iv" title="Permanent link">&para;</a></h3>
+<ul>
+<li>대상 : 시판 후 환자군</li>
+<li>목적 : 장기 효과 , 드물게 나타나는 부작용 파악</li>
+<li>약물감시, 실제 임상 적용 평가</li>
+</ul>
+<h2 id="_11">임상 시험 절차<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h2>
+<ol>
+<li>계획 수립 &amp; 승인요청<ul>
+<li>임상시험계획서 작성</li>
+<li>식약처 , 기관윤리위원회 (IRB) 에 승인 신청</li>
+</ul>
+</li>
+<li>승인 심사<ul>
+<li>계획서 검토</li>
+<li>승인 여부 결정</li>
+</ul>
+</li>
+<li>시험 의뢰 ( 책임 연구자 지정 )<ul>
+<li>신약의 안정성, 효과 검증</li>
+</ul>
+</li>
+<li>피험자 동의 &amp; 시험 진행<ul>
+<li>과학적, 윤리적 기준에 따라 임상 시험 실시</li>
+</ul>
+</li>
+<li>실태 조사 ( 감독 )<ul>
+<li>식약처가 임상시험 기관 및 연구자 대상으로 현장조사 실시</li>
+</ul>
+</li>
+<li>평가 &amp; 허가<ul>
+<li>식약처가 신약의 안정성과 유효성 평가 허가 후 판매 가능</li>
+</ul>
+</li>
+</ol>
+<h2 id="hypothesis-testing">가설 검정 ( Hypothesis Testing )<a class="headerlink" href="#hypothesis-testing" title="Permanent link">&para;</a></h2>
+<ul>
+<li>모수 ( Parameter )의 값에 대한 가설의 옳고 그름 판단 절차</li>
+<li>연구자의 연구 목적에 반하는 가정 하에 출발하여, 표본자료를 통해 연구자가
+    추구하는 것에 대한 증거를 찾고자 하는 일련의 방법론</li>
+</ul>
+<div class="highlight"><pre><span></span><code>5% 유의수준에서 가설을 기각한다.
+A 그룹과 B 그룹은 통계적으로 유의한 차이를 보였다 ( p &lt; 0.01 )
+</code></pre></div>
+<h3 id="_12">원칙<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p>대립가설 을 입증할 강력한 증거가 있을때 채택하고,
+    증거가 충분하지 못하면 연구자의 주장을 버리고 귀무가설로 돌아감</p>
+</li>
+<li>
+<p>귀무가설이 참이라는 가정하에서 표본이 관측된 값이 귀무가설에 대한 유의미한 반증이며 대립가설에 대한 입증이 확인된다면 귀무가설을 기각</p>
+</li>
+</ul>
+<h3 id="_13">용어<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h3>
+<ul>
+<li>가설 : 귀무가설 (<span class="arithmatex">\(H_O\)</span>) , 대립가설 ( <span class="arithmatex">\(H_A\)</span> )</li>
+<li>오류 : 제 1종 오류 (<span class="arithmatex">\(\alpha\)</span>) , 제 2종 오류 (<span class="arithmatex">\(\beta\)</span>)</li>
+<li>유의 수준</li>
+<li>유의 확률 (p-value)</li>
+<li>단측검정 ( one-sided test )</li>
+<li>양측검정 ( two-sided test )</li>
+</ul>
+<h4 id="h_o"><span class="arithmatex">\(H_O\)</span><a class="headerlink" href="#h_o" title="Permanent link">&para;</a></h4>
+<ul>
+<li>기존의 사실, 주장</li>
+<li>연구자의 주장에 반하는 주장</li>
+<li>대립가설의 모수 영역의 반대</li>
+</ul>
+<h4 id="h_a"><span class="arithmatex">\(H_A\)</span><a class="headerlink" href="#h_a" title="Permanent link">&para;</a></h4>
+<ul>
+<li>새로운 사실, 주장, 믿음</li>
+<li>연구자의 주장</li>
+<li>연구자가 입증하고자 하는 모수 영역</li>
+</ul>
+<h4 id="p-value">유의확률 P-value<a class="headerlink" href="#p-value" title="Permanent link">&para;</a></h4>
+<ul>
+<li>귀무가설 하에서 관측된 사건 이상으로 귀무가설에 반하는 사건이 일어날 확률</li>
+<li>
+<p>p-value 가 작을수록 귀무가설에 반대되는 강력한 증거</p>
+</li>
+<li>
+<p>얼마나 작아야하는가?</p>
+<ul>
+<li>판단 기준 : 유의 수준</li>
+<li>예 : 유의 수준 5% -&gt; p-value &lt; 0.05 =&gt; 귀무가설 기각</li>
+</ul>
+</li>
+</ul>
+<h4 id="one-tail-test">단측검정 (one-tail test)<a class="headerlink" href="#one-tail-test" title="Permanent link">&para;</a></h4>
+<ul>
+<li>귀무가설에 대하여 작은값 또는 큰값 ( 즉, 한 방향으로 검정 )<ul>
+<li><span class="arithmatex">\(H_O\)</span> : 신약의 치료효과가 기존의 약과 차이가 없다.</li>
+<li><span class="arithmatex">\(H_A\)</span> : 신약의 치료효과가 기존의 약보다 좋다.</li>
+</ul>
+</li>
+</ul>
+<h4 id="two-tail-test">양측검정 (two-tail test)<a class="headerlink" href="#two-tail-test" title="Permanent link">&para;</a></h4>
+<ul>
+<li>귀무가설에 대하여 양방향 (작은값, 큰값) 으로 검정하는 것<ul>
+<li><span class="arithmatex">\(H_O\)</span> : 신약과 기존의 약의 치료효과가 같다.</li>
+<li><span class="arithmatex">\(H_A\)</span> : 신약과 기존의 약의 치료효과가 같지 않다.</li>
+</ul>
+</li>
+</ul>
+<h3 id="_14">오류<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>구분</th>
+<th>실제</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td><span class="arithmatex">\(H_O\)</span> True</td>
+<td><span class="arithmatex">\(H_O\)</span> False</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(H_O\)</span> 기각</td>
+<td>제 1종 오류 <span class="arithmatex">\(\alpha\)</span></td>
+<td></td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(H_O\)</span> 기각 실패</td>
+<td></td>
+<td>제 2종 오류 <span class="arithmatex">\(\beta\)</span></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>
+<p>제 1종 오류 : 귀무가설 <span class="arithmatex">\(H_O\)</span> 가 사실인데 기각하는 결정을 내리는 오류</p>
+<ul>
+<li>예: 실제로 두 집단간의 치료 효과가 차이가 별로 없는데도 관측된 값에서
+    치료효과의 차이가 우연히 크게 나타날 수 있음</li>
+</ul>
+</li>
+<li>
+<p>제 2종 오류 : 귀무가설 <span class="arithmatex">\(H_O\)</span> 가 거짓인데 기각하지 못하는 오류</p>
+<ul>
+<li>예: 치료효과의 차이가 있는데도 불구하고, 관측된 차이 우연히 매우 작은 값</li>
+</ul>
+</li>
+</ul>
+<h4 id="_15">가설 검정의 원리<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h4>
+<ul>
+<li>유의수준 (Significant Level) : <span class="arithmatex">\(\alpha\)</span> 가 일어날 확률의 최대 허용치</li>
+<li>검정력 ( Power ) : <span class="arithmatex">\(1-\beta\)</span> -&gt; 귀무가설이 사실이 아닐때 귀무가설을 기각하게 될 확률</li>
+</ul>
+<p>"제 1종 오류 확률을 고정시키고, 제 2종 오류확률을 최소화하는 검정방법(최강력 기각역) 을 찾아야한다."</p>
+<h6 id="1">예제 1<a class="headerlink" href="#1" title="Permanent link">&para;</a></h6>
+<p><div class="highlight"><pre><span></span><code>제약회사에서 두 약을 비교하기 위한 실험을 시행한 결과 신약의 치료율이 76%로 기존 약의 치료율 보다 6% 좋게 나타남
+</code></pre></div>
+- 치료 효과가 같은데도 우연히 더 좋게 나올 수 있다.
+- 신약의 치료 효과가 더 좋기 때문에 당연히 나타난 결과이다.</p>
+<p>-&gt; 치료효과가 같을때 우연히 6% 이상의 차이를 보일 확률을 계산
+-&gt; 이 확률이 극히 작다면 귀무가설을 기각할 만한 충분한 증거가 된다.</p>
+<h4 id="_16">가설 검정의 절차<a class="headerlink" href="#_16" title="Permanent link">&para;</a></h4>
+<ol>
+<li>가설 설정<ol>
+<li>귀무가설 : 차이 효과가 없다</li>
+<li>대립가설 : 차이 효과가 있다.</li>
+</ol>
+</li>
+<li>유의수준 설정<ol>
+<li>보통 0.05 사용</li>
+<li>즉, 잘못된 결론 (<span class="arithmatex">\(\alpha\)</span>) 를 허용할 최대 확률</li>
+</ol>
+</li>
+<li>검정통계량 계산<ol>
+<li>표본 자료를 이용해 통계량 산출</li>
+<li>ex.) Z , t, F 값 등</li>
+</ol>
+</li>
+<li>기각역 설정 &amp; p-value 계산<ol>
+<li>기각역 (Critical Region) 설정</li>
+<li>또는 p-value 를 계산하여 유의수준과 비교</li>
+</ol>
+</li>
+<li>결과 도출<ol>
+<li>p-value 가 유의수준보다 작거나 같으면 귀무가설 기각</li>
+<li>p-value 가 유의수준보다 크면 귀무가설 기각 실패</li>
+</ol>
+</li>
+</ol>
+<h5 id="1_1">예 1<a class="headerlink" href="#1_1" title="Permanent link">&para;</a></h5>
+<div class="highlight"><pre><span></span><code>새로운 다이어트 프로그램의 회원 모집 광고에서는 프로그램 참가자들이
+5주 내에 평균 10kg 보다 많이 감량을 할 수 있다고 광고하고있다.
+56명의 참가자들이 5주 동안의 감량 자료로부터 표본평균 &amp; 표본표준편차를 계산한 결과
+각각 10.7 Kg, 4.6 Kg 이었다고 하자.
+이 자료에 따르면 광고의 문구가 사실이라고 할 수 있는가?
+</code></pre></div>
+<ol>
+<li>가설 설정<ol>
+<li>귀무가설 : 평균 감량 효과 10kg : <span class="arithmatex">\(\mu\;=\;10\)</span></li>
+<li>대립가설 : 평균 감량 효과 10kg 초과 : <span class="arithmatex">\(\mu\;&gt;\;10\)</span></li>
+</ol>
+</li>
+<li>유의수준 설정<ol>
+<li>보통 0.05 사용 (5%)</li>
+<li>즉, 잘못된 결론 (<span class="arithmatex">\(\alpha\)</span>) 를 허용할 최대 확률</li>
+</ol>
+</li>
+<li>
+<p>검정통계량 계산</p>
+<div class="arithmatex">\[
+\begin{align}
+Z\;=\;\frac{X\;-\;\mu_o}{\sigma\sqrt{n}}\;\approx\;\frac{X-\mu_o}{\frac{s}{\sqrt n}}\;=\;\frac{10.7-10}{\frac{4.6}{\sqrt{5.6}}}\;=\;1.139
+\end{align}
+\]</div>
+</li>
+<li>
+<p>기각역 설정 &amp; p-value 계산</p>
+<ol>
+<li>기각역 (Critical Region) 설정 : <span class="arithmatex">\(Z \geq z_{0.05}\;=\;1.645\)</span> </li>
+<li>p-value : <span class="arithmatex">\(P(Z\;\geq\;1.139)\;=\;0.1357\)</span></li>
+</ol>
+</li>
+<li>결과 도출<ol>
+<li>p-value 가 유의수준보다 작거나 같으면 귀무가설 기각</li>
+<li>p-value 가 유의수준보다 크면 귀무가설 기각 실패
+<span class="arithmatex">\(\therefore\)</span> P 값이 유의수준보다 크므로 귀무가설 기각 실패
+  유의수준 5% 하에서 새로운 다이어트 프로그램은 5주내
+  평균 10kg 보다 많이 감량 할 수 있다고 볼 수 없다.</li>
+</ol>
+</li>
+</ol>
+<p><img alt="Pasted image 20250912140446.png" src="../../attachments/Pasted%20image%2020250912140446.png" /></p>
+<ul>
+<li><span class="arithmatex">\(Z\;=\;1.139\)</span></li>
+<li><span class="arithmatex">\(Z\;\geq\;z_{0.05}\;=\;1.645\)</span></li>
+<li><span class="arithmatex">\(P(Z\;\geq\;1.139)\;=\;0.1357\)</span></li>
+</ul>
+<h5 id="2">예 2<a class="headerlink" href="#2" title="Permanent link">&para;</a></h5>
+<p>다음 자료는 뚜렷한 폐기종 발전 이전의 흡연자에 대해 폐 파괴 현상을 조사한 것이다.
+<div class="highlight"><pre><span></span><code><span class="n">smoke</span> <span class="o">=</span> <span class="p">{</span><span class="mf">16.6</span><span class="p">,</span> <span class="mf">13.9</span><span class="p">,</span> <span class="mf">11.3</span><span class="p">,</span> <span class="mf">26.5</span><span class="p">,</span> <span class="mf">17.4</span><span class="p">,</span> <span class="mf">15.3</span><span class="p">,</span> <span class="mf">15.8</span><span class="p">,</span> <span class="mf">12.3</span><span class="p">,</span> <span class="mf">18.6</span><span class="p">,</span> <span class="mf">12.0</span><span class="p">,</span> <span class="mf">24.1</span><span class="p">,</span> <span class="mf">16.5</span><span class="p">,</span> <span class="mf">21.8</span><span class="p">,</span> <span class="mf">16.3</span><span class="p">,</span> <span class="mf">23.4</span><span class="p">,</span> <span class="mf">18.8</span><span class="p">}</span>
+<span class="n">non_smoke</span> <span class="o">=</span> <span class="p">{</span><span class="mf">8.1</span><span class="p">,</span> <span class="mf">6.0</span><span class="p">,</span> <span class="mf">10.8</span><span class="p">,</span> <span class="mf">11.0</span><span class="p">,</span> <span class="mf">7.7</span><span class="p">,</span> <span class="mf">17.9</span><span class="p">,</span> <span class="mf">8.5</span><span class="p">,</span> <span class="mf">13.0</span><span class="p">,</span> <span class="mf">18.9</span><span class="p">}</span>
+</code></pre></div>
+- 비흡엽자 집단과 호흡기질환 외의 다른 원인으로 사망한 흡연자 집단에 대해
+    폐 파괴 지수를 측정하였다. (높은 수치는 폐의 손상됨이 크다는 것을 뜻한다.)
+    각 그룹의 관측치들은 독립적으로 얻어진 것이며,
+    두 그룹에서의 모분산은 같다고 가정한다.</p>
+<ul>
+<li>흡연자와 비흡연자의 폐 파괴 지수의 평균이 같다고 할 수 있는가?</li>
+</ul>
+<h6 id="_17">절차<a class="headerlink" href="#_17" title="Permanent link">&para;</a></h6>
+<ol>
+<li>가설 설정<ol>
+<li>귀무가설 : 흡연자와 비흡연자의 폐 파괴 지수의 평균이 같지않다.</li>
+<li>대립가설 : 흡연자와 비흡연자의 폐 파괴 지수의 평균이 같다.</li>
+</ol>
+</li>
+<li>유의수준 설정<ol>
+<li>보통 0.05 사용</li>
+<li>즉, 잘못된 결론 (<span class="arithmatex">\(\alpha\)</span>) 를 허용할 최대 확률</li>
+</ol>
+</li>
+<li>
+<p>검정통계량 계산</p>
+<div class="arithmatex">\[
+\begin{align}
+Z\;=\;
+\end{align}
+\]</div>
+</li>
+<li>
+<p>기각역 설정 &amp; p-value 계산</p>
+<ol>
+<li>기각역 :</li>
+<li>p-value :</li>
+</ol>
+</li>
+<li>결과 도출<ol>
+<li>p-value 가 유의수준보다 작거나 같으면 귀무가설 기각</li>
+<li>p-value 가 유의수준보다 크면 귀무가설 기각 실패</li>
+</ol>
+</li>
+</ol>
+<h2 id="_18">생명과학 연구자료의 유형<a class="headerlink" href="#_18" title="Permanent link">&para;</a></h2>
+<h3 id="qualitative-data">질적 자료 (Qualitative Data)<a class="headerlink" href="#qualitative-data" title="Permanent link">&para;</a></h3>
+<ul>
+<li>범주형 (Catagorical)
+    반응 값이 몆개의 범주로 나누어진 것<ul>
+<li>명목형 자료 (Nominal) - 범주의 순서가 없다.
+    예 : 남/여, 성공/실패, 흡연/비흡연, A/B/O/AB</li>
+<li>순서형 자료 (Ordinal) - 범주의 순서가 있다.
+    예 : 고통의 감소 정도 (전혀 없음 / 조금있음 / 매우 많음 등)</li>
+</ul>
+</li>
+</ul>
+<h3 id="quantitative-data">양적 자료 (Quantitative Data)<a class="headerlink" href="#quantitative-data" title="Permanent link">&para;</a></h3>
+<ul>
+<li>수치형 (Numerical)<ul>
+<li>이산형 (Discrete)
+    예: 출산 횟수, 재발 횟수, 나이 등</li>
+<li>연속형 (Continuous)
+    예: 체중, 키, 혈압 등</li>
+</ul>
+</li>
+</ul>
+<h3 id="_19">시계열<a class="headerlink" href="#_19" title="Permanent link">&para;</a></h3>
+<h4 id="survival-time">생존 시간 자료 (Survival time)<a class="headerlink" href="#survival-time" title="Permanent link">&para;</a></h4>
+<ul>
+<li>어느 시점에서 사망 등 사건(event) 발생 시점까지의 시간, 중도 절단 자료 종종 포함</li>
+</ul>
+<p><img alt="Pasted image 20250912141850.png" src="../../attachments/Pasted%20image%2020250912141850.png" /></p>
+<table>
+<thead>
+<tr>
+<th>구분</th>
+<th>시간(event)</th>
+<th>시간(censored)</th>
+<th>중도 절단 여부</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>환자 1</td>
+<td>4</td>
+<td>NA</td>
+<td>아니오</td>
+</tr>
+<tr>
+<td>환자 2</td>
+<td>NA</td>
+<td>5</td>
+<td>예</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../../..", "features": [], "search": "../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\ud074\ub9bd\ubcf4\ub4dc\uc5d0 \ubcf5\uc0ac\ub428", "clipboard.copy": "\ud074\ub9bd\ubcf4\ub4dc\ub85c \ubcf5\uc0ac", "search.result.more.one": "\uc774 \ubb38\uc11c\uc5d0\uc11c 1\uac1c\uc758 \uac80\uc0c9 \uacb0\uacfc \ub354 \ubcf4\uae30", "search.result.more.other": "\uc774 \ubb38\uc11c\uc5d0\uc11c #\uac1c\uc758 \uac80\uc0c9 \uacb0\uacfc \ub354 \ubcf4\uae30", "search.result.none": "\uac80\uc0c9\uc5b4\uc640 \uc77c\uce58\ud558\ub294 \ubb38\uc11c\uac00 \uc5c6\uc2b5\ub2c8\ub2e4", "search.result.one": "1\uac1c\uc758 \uc77c\uce58\ud558\ub294 \ubb38\uc11c", "search.result.other": "#\uac1c\uc758 \uc77c\uce58\ud558\ub294 \ubb38\uc11c", "search.result.placeholder": "\uac80\uc0c9\uc5b4\ub97c \uc785\ub825\ud558\uc138\uc694", "search.result.term.missing": "\ud3ec\ud568\ub418\uc9c0 \uc54a\uc740 \uac80\uc0c9\uc5b4", "select.version": "\ubc84\uc804 \uc120\ud0dd"}, "version": null}</script>
+    
+    
+      <script src="../../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+      
+    
+  </body>
+</html>
