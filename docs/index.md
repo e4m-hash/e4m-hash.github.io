@@ -20,8 +20,8 @@
 ## 공부 노트
 → [**노트 전체**](notes/index.md)
 
-- [**AI**](notes/ai/index.md) — 머신러닝 · 딥러닝 · LLM 학습 정리
-- [**통계**](notes/statistics/index.md) — 확률 · 추론 · 회귀 등 정리
+- [**AI**](docs/notes/analysis/ai/index.md) — 머신러닝 · 딥러닝 · LLM 학습 정리
+- [**통계**](docs/notes/analysis/statistics/index.md) — 확률 · 추론 · 회귀 등 정리
 
 ## 더 보기
 - [**소개**](about.md) — 이력과 관심 분야
