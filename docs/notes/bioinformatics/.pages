@@ -1,8 +1,5 @@
 title: 생물정보
-# omics/ 하위 파일을 섹션 바로 아래에 평평하게 노출(파일에 H1이 없어 라벨 명시)
 nav:
   - index.md
-  - 16S rRNA: "omics/16s rRNA.md"
-  - Whole Metagenome: "omics/WholeMetaGenome.md"
-  - single-cell RNA: "omics/singlecell-RNA.md"
+  - omics
   - ...

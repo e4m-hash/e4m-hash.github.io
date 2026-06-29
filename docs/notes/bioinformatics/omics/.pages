@@ -1,0 +1,7 @@
+title: 오믹스
+# 파일에 H1 이 없어 사이드바 라벨을 명시. 새 파일은 ... 로 자동 편입
+nav:
+  - 16S rRNA: "16s rRNA.md"
+  - Whole Metagenome: "WholeMetaGenome.md"
+  - single-cell RNA: "singlecell-RNA.md"
+  - ...
