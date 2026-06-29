@@ -1,0 +1,3599 @@
+
+<!doctype html>
+<html lang="ko" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://e4m-hash.github.io/notes/ai/papers/Genomic%20language%20models%20%28gLMs%29%20decode%20bacterial%20genomes%20for%20improved%20gene%20prediction%20and%20translation%20initiation%20site%20identification/Summary/">
+      
+      
+        <link rel="prev" href="../../Best%20practices%20for%20developing%20microbiome-based%20disease%20diagnostic%20classifiers%20through%20machine%20learning/">
+      
+      
+        <link rel="next" href="../Main%20%28ko%29/">
+      
+      
+        
+      
+      
+        <link rel="alternate" type="application/rss+xml" title="RSS 피드 생성완료" href="../../../../../feed_rss_created.xml">
+        <link rel="alternate" type="application/rss+xml" title="RSS 피드 업데이트완료" href="../../../../../feed_rss_updated.xml">
+      
+      <link rel="icon" href="../../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>gLMs — 요약 - e4m Portfolio</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="pink" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#orf-cds" class="md-skip">
+          콘텐츠로 이동
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="상단/헤더">
+    <a href="../../../../.." title="e4m Portfolio" class="md-header__button md-logo" aria-label="e4m Portfolio" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            e4m Portfolio
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              gLMs — 요약
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="pink" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6m0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4M7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="pink" data-md-color-accent="blue"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="검색" placeholder="검색" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="검색">
+        
+        <button type="reset" class="md-search__icon md-icon" title="지우기" aria-label="지우기" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            검색 초기화
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="네비게이션" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../../.." title="e4m Portfolio" class="md-nav__button md-logo" aria-label="e4m Portfolio" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    e4m Portfolio
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    홈
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../about/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    소개
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    노트
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    노트
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    개요 (Data Analysis Stack)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../data-collection/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    데이터 수집
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../pipeline/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    파이프라인
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    생물정보
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    생물정보
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../bioinformatics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    개요
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../bioinformatics/omics/16s%20rRNA/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    16S rRNA
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../bioinformatics/omics/WholeMetaGenome/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Whole Metagenome
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../bioinformatics/omics/singlecell-RNA/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    single-cell RNA
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_5" id="__nav_3_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    통계
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    통계
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../statistics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    개요
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_5_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_5_2" id="__nav_3_5_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    이론
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_5_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_5_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    이론
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../statistics/theory/%EC%86%8C%EA%B0%9C/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    소개
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../statistics/theory/%EC%A7%91%EB%8B%A8%EC%9D%98%20%EB%B9%84%EA%B5%90/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    집단의 비교
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../statistics/theory/%EB%B6%84%ED%95%A0%ED%91%9C%EB%B6%84%EC%84%9D/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    분할표분석
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../statistics/theory/%EB%A1%9C%EC%A7%93%EB%B6%84%EC%84%9D/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    로짓분석
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../statistics/theory/%EB%B0%98%EB%B3%B5%EC%B8%A1%EC%A0%95%20%EC%9E%90%EB%A3%8C%EB%B6%84%EC%84%9D/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    반복측정 자료분석
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../statistics/theory/%EC%83%9D%EC%A1%B4%EB%B6%84%EC%84%9D/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    생존분석
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_5_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_5_3" id="__nav_3_5_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    실습
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_5_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_5_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    실습
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../statistics/practice/%EC%A7%91%EB%8B%A8%EC%9D%98%20%EB%B9%84%EA%B5%90/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    집단의 비교
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../statistics/practice/%EB%B6%84%ED%95%A0%ED%91%9C%20%EB%B6%84%EC%84%9D/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    분할표 분석
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../statistics/practice/%EB%A1%9C%EC%A7%93%20%EB%B6%84%EC%84%9D/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    로짓 분석
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../statistics/practice/%EA%B3%B5%EB%B6%84%EC%82%B0%20%EB%B6%84%EC%84%9D/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    공분산 분석
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../statistics/practice/%EB%B0%98%EB%B3%B5%EC%B8%A1%EC%A0%95%EC%9E%90%EB%A3%8C%EB%B6%84%EC%84%9D/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    반복측정자료분석
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../statistics/practice/%EC%83%9D%EC%A1%B4%EB%B6%84%EC%84%9D/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    생존분석
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../statistics/practice/bweight/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    bweight
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_5_3_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_5_3_8" id="__nav_3_5_3_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    분산식 유도
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_3_5_3_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_5_3_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    분산식 유도
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../statistics/practice/Prove/OR%20%EC%9D%98%20%EB%B6%84%EC%82%B0%20%EC%9C%A0%EB%8F%84/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OR 의 분산 유도
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../statistics/practice/Prove/RR%20%EC%9D%98%20%EB%B6%84%EC%82%B0%20%EC%9C%A0%EB%8F%84/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    RR 의 분산 유도
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_6" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3_6" id="__nav_3_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_6_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    AI
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    개요
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../machine-learning/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    머신러닝
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_6_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_6_3" id="__nav_3_6_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    딥러닝
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_6_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_6_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    딥러닝
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../deep-learning/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    개요
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../deep-learning/Ollama%20%2B%20Webui/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ollama + WebUI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_6_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3_6_4" id="__nav_3_6_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    논문 리뷰
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_6_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_6_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    논문 리뷰
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    목록
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Best%20practices%20for%20developing%20microbiome-based%20disease%20diagnostic%20classifiers%20through%20machine%20learning/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Best practices (microbiome ML)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    gLMs — 요약
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    gLMs — 요약
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="목차">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      목차
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#orf-cds" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ORF / CDS
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bert" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        BERT
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#abstract" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Abstract
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Introduction
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#materials-and-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Materials and Methods
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Materials and Methods">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#data-collection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data Collection
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-processing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data processing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tokenization-embadding" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tokenization / embadding
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Tokenization / embadding">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#k-mer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        토큰화 (K-mer 분할)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        임베딩 (수치 변환)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        최종 행렬 크기
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Model
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fine-tunning" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fine Tunning
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Fine Tunning">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#self-attention" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Self-Attention
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#experiment-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Experiment Setup
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#result" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Result
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Result">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#training-performance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Training performance
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#evaluating-length-bias-and-overfitting-in-cds-classification" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Evaluating length bias and overfitting in CDS classification'
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#performance-benchmarking-on-experimentally-verified-genomes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Performance benchmarking on experimentally verified genomes
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Performance benchmarking on experimentally verified genomes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        표 5.
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        표 6.
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TIS 예측 설명
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        논문 결과의 생물학적 의미
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#shine-dalgarno-sd-sequence" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Shine-Dalgarno 서열 (SD sequence)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#promoter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        프로모터 서열 (Promoter)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        논문과의 연결
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tis_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TIS 상류 구조 요약
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="TIS 상류 구조 요약">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        주요 사항
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Main%20%28ko%29/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    gLMs — 본문(ko)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_7" id="__nav_3_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    도구 · 환경
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    도구 · 환경
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../environment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    개요
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../environment/markdown/LaTeX%20%EC%88%98%EC%8B%9D%20%EC%A7%80%EC%9B%90/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    LaTeX 수식 지원
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../environment/markdown/Mermaid%20%EB%8B%A4%EC%9D%B4%EC%96%B4%EA%B7%B8%EB%9E%A8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mermaid 다이어그램
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    프로젝트
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    프로젝트
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../projects/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    목록
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../projects/FunOMIC2%20Nextflow%20Pipeline/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FunOMIC2 Nextflow Pipeline
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../projects/KLAS%20%28bibliographic%20information%29%20Macro/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    KLAS 서지정보 매크로
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../projects/KT%20Aivle%20Big%20Project/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    KT Aivle Big Project
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../blog/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    블로그
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="목차">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      목차
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#orf-cds" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ORF / CDS
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bert" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        BERT
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#abstract" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Abstract
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Introduction
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#materials-and-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Materials and Methods
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Materials and Methods">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#data-collection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data Collection
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-processing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data processing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tokenization-embadding" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tokenization / embadding
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Tokenization / embadding">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#k-mer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        토큰화 (K-mer 분할)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        임베딩 (수치 변환)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        최종 행렬 크기
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Model
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fine-tunning" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fine Tunning
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Fine Tunning">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#self-attention" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Self-Attention
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#experiment-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Experiment Setup
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#result" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Result
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Result">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#training-performance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Training performance
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#evaluating-length-bias-and-overfitting-in-cds-classification" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Evaluating length bias and overfitting in CDS classification'
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#performance-benchmarking-on-experimentally-verified-genomes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Performance benchmarking on experimentally verified genomes
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Performance benchmarking on experimentally verified genomes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        표 5.
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        표 6.
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TIS 예측 설명
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        논문 결과의 생물학적 의미
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#shine-dalgarno-sd-sequence" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Shine-Dalgarno 서열 (SD sequence)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#promoter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        프로모터 서열 (Promoter)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        논문과의 연결
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tis_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TIS 상류 구조 요약
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="TIS 상류 구조 요약">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        주요 사항
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h3 id="orf-cds">ORF / CDS<a class="headerlink" href="#orf-cds" title="Permanent link">&para;</a></h3>
+<ul>
+<li>ORF , CDS 개념 설명 : 원핵생물( bacteria 에서 대부분 ORF -&gt; CDS )
+    : 
+        1. 현재 NCBI genbank (PGAP 으로 구축됨)이 GOLD Standard
+        2. 그러나, 실험 검증 Ribo-seq 이 필요하다.</li>
+</ul>
+<p>ORF는 <strong>시작 코돈(AUG)부터 종결 코돈(UAA, UAG, UGA)까지 이어지는 핵산 서열 구간</strong>으로, 중간에 종결 코돈이 없어 "열려 있는(open)" 상태의 리딩 프레임을 말합니다. ORF는 <strong>잠재적으로 단백질을 암호화할 수 있는 서열</strong>을 가리키며, 실제로 번역되는지 여부와는 무관하게 정의됩니다. 즉, ORF는 단백질 코딩 가능성을 탐색하는 분석적·예측적 개념으로, 실험적으로 검증되지 않은 서열도 포함합니다.</p>
+<p>CDS는 <strong>실제로 단백질로 번역되는 것이 확인된 서열</strong>로, 시작 코돈(AUG)부터 종결 코돈까지의 범위 중 오직 <strong>엑손만을 포함</strong>합니다. 5′ UTR과 3′ UTR 같은 비번역 영역(UTR)과 인트론은 CDS에 포함되지 않습니다. 따라서 <strong>모든 CDS는 ORF이지만, 모든 ORF가 CDS인 것은 아닙니다</strong> — 비코딩 RNA로 전사되는 ORF나 전혀 전사되지 않는 ORF도 존재하기 때문입니다.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>원핵생물 (Prokaryote)</th>
+<th>진핵생물 (Eukaryote)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Intron 유무</td>
+<td>없음</td>
+<td>있음</td>
+</tr>
+<tr>
+<td>ORF = CDS</td>
+<td><strong>동일</strong></td>
+<td><strong>다름</strong></td>
+</tr>
+<tr>
+<td>mRNA 구조</td>
+<td>전처리 없이 바로 번역</td>
+<td>Splicing 후 mature mRNA 번역</td>
+</tr>
+<tr>
+<td>ORF 적용</td>
+<td>DNA에서 직접 식별 가능</td>
+<td>Spliced mRNA에만 적용 가능</td>
+</tr>
+</tbody>
+</table>
+<h3 id="bert">BERT<a class="headerlink" href="#bert" title="Permanent link">&para;</a></h3>
+<ul>
+<li>BERT 모델 설명 ( Transformer , Tokenizer ) 및 DNA BERT 소개</li>
+</ul>
+<p>BERT(Bidirectional Encoder Representations from Transformers)
+2018 google</p>
+<p>TIS : translation initiation site , 번역 시작 지점
+ORF 서치 : Bio.Seq , 특정 시작 및 종료 코돈을 기반으로 잠재적 ORF를 식별</p>
+<ul>
+<li>
+<p><strong>Masked Language Modeling (MLM)</strong>: 
+입력 텍스트의 약 15%를 무작위로 마스킹하고, 앞뒤 문맥을 보고 마스킹된 단어를 예측</p>
+</li>
+<li>
+<p><strong>Next Sentence Prediction (NSP)</strong>: 두 문장이 실제로 연속된 문장인지 예측</p>
+</li>
+</ul>
+<p>DNA BERT
+2021 </p>
+<p>K-mer 토크나이제이션 적용</p>
+<p>DNABERT는 인간 참조 게놈(Hg38)의 32억 개 뉴클레오타이드 데이터로 사전 학습되었으며, 8개의 NVIDIA 2080Ti GPU에서 약 25일간 훈련되었습니다.</p>
+<p>원래 BERT의 NSP를 제거하고, DNA 특성에 맞게 연속된 k개 토큰을 마스킹하는 방식으로 사전 학습을 수정했습니다.</p>
+<p>DNABERT-2는 2023년 공개된 2세대 모델로, 단일 인간 게놈이 아닌 <strong>다중 생물종 게놈</strong>으로 학습하고 Byte Pair Encoding(BPE) 토크나이저를 채택해 효율성과 성능이 크게 향상됨</p>
+<table>
+<thead>
+<tr>
+<th>항목</th>
+<th>BERT</th>
+<th>DNABERT</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>입력 데이터</td>
+<td>자연어 텍스트</td>
+<td>DNA 뉴클레오타이드 서열 (A, C, G, T)</td>
+</tr>
+<tr>
+<td>토크나이제이션</td>
+<td>Word</td>
+<td>k-mer (연속 염기 묶음)</td>
+</tr>
+<tr>
+<td>학습 데이터</td>
+<td>Wikipedia, BooksCorpus</td>
+<td>인간 참조 게놈 Hg38</td>
+</tr>
+<tr>
+<td>파인튜닝 목표</td>
+<td>감성분석, QA, NER 등</td>
+<td>프로모터·TFBS·스플라이스 예측 등</td>
+</tr>
+</tbody>
+</table>
+<h1 id="abstract">Abstract<a class="headerlink" href="#abstract" title="Permanent link">&para;</a></h1>
+<p>우리는 자연어 처리의 대형 언어 모델에서 영감을 받은 유전체 언어 모델(gLM)을 탐구하여 박테리아 유전자 예측을 강화합니다.
+이 모델들은 LLM이 인간 언어를 처리하는 방식과 유사하게 유전자 서열 내 패턴과 맥락적 의존성을 학습합니다.</p>
+<p>우리는 특히 DNABERT를 사용하여 두 단계 프레임워크를 사용하여 박테리아 유전자 예측을 수행합니다: 
+    먼저 코딩 서열(CDS) 영역을 식별하고, 
+    그 다음에는 올바른 번역 시작 부위(TIS)를 식별하여 예측을 정제합니다.</p>
+<p>DNABERT는 선별된 NCBI 완전 박테리아 유전체 세트에서 k-mer 토큰라이저를 사용하여 서열 처리를 미세 조정합니다.</p>
+<p>우리의 결과는 GeneLM이 유전자 예측 정확도를 크게 향상시킨다는 것을 보여줍니다.</p>
+<p>Prodigal, GeneMark-HMM, Glimmer 등 선도적인 원핵생물 유전자 탐색기와 비교할 때, GeneLM은 누락된 CDS 예측을 줄이고 일치하는 주석을 증가시킵니다.</p>
+<h1 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h1>
+<p>CDS : Prodigal , Glimmer, GeneMark 등
+TIS : TiCo, TriTISA 등
+-&gt; ORF 내부의 TIS, 30 - 60 뉴클레오타이드 길이 등 궁금한것 보충</p>
+<p>Limitation : smORF 예측 불가,<br />
+양방향 인코더 : 문맥적 의미 해석 가능한 방식</p>
+<p>유전체 시퀀싱 분석 결과, 트랜스포존 시퀀싱 접근법을 통해 확인된 많은 필수 유전자들이 유전체 결실로 인한 위양성을 포함하고 있음을 보여주며[[^6]], 실제 유전자 주석을 희생하지 않으면서 정밀도를 높이는 방법의 필요성을 강조하고 있습니다.</p>
+<p><strong>리보솜 프로파일링 (Ribo-seq)</strong>이 가장 강력한 실험 기반 TIS 탐색법입니다. 리보솜이 점유한 mRNA 단편을 딥시퀀싱하여 번역이 실제로 일어나는 위치를 직접 확인합니다.</p>
+<ul>
+<li>
+<p><strong>TI-seq / GTI-seq</strong>: 번역 개시 억제제(harringtonine, lactimidomycin)를 처리하면 리보솜이 AUG에 정체되는데, 이 지점을 시퀀싱으로 포착하여 TIS를 정밀하게 식별합니다.</p>
+</li>
+<li>
+<p><strong>SD 서열 탐색 (원핵생물)</strong>: 원핵생물에서는 Shine-Dalgarno 서열(<code>AGGAGG</code>)이 16S rRNA와 상보 결합하여 리보솜을 TIS로 안내하므로, AUG 상류 5~10 nt에서 이 서열을 탐색합니다.</p>
+</li>
+</ul>
+<h1 id="materials-and-methods">Materials and Methods<a class="headerlink" href="#materials-and-methods" title="Permanent link">&para;</a></h1>
+<h2 id="data-collection">Data Collection<a class="headerlink" href="#data-collection" title="Permanent link">&para;</a></h2>
+<p>NCBI 아카이브에서 GenBank 데이터베이스를 통해 Bacteria Gene Data 수집
+<code>reference genome</code> 수준 필터링</p>
+<p>DNA File : 레퍼런스 게놈 서열 (read mapping의 참조 기준) 
+GFF File : 레퍼런스 게놈의 유전자 어노테이션 (발현량 계산, 변이 해석 등에 활용)</p>
+<p>GFF3는 이전 GFF2/GTF의 한계를 개선하여 <strong>유전자 → 전사체 → 엑손</strong>의 3단계 계층 구조를 표현할 수 있습니다.</p>
+<p>게놈에서 ORF를 뽑아 → 참조 파일과 비교해 라벨링 → CDS 분류용과 번역 시작점 분류용 데이터셋을 따로 만든 것입니다.</p>
+<h2 id="data-processing">Data processing<a class="headerlink" href="#data-processing" title="Permanent link">&para;</a></h2>
+<p>DS용과 TIS 분류용 두 가지 유형의 데이터셋을 라벨링했습니다.
+CDS 데이터셋은 최대 길이 510개의 뉴클레오타이드 서열을 포함한 CSV 파일로 구성되며, 각 파일마다 양성()이나 음성으로 라벨이 붙습니다.
+양성 라벨은 해당 서열이 GFF 참조 파일의 주석이 달린 CDS와 시작점 또는 종료 위치가 일치하는 가장 긴 절단된 ORF를 나타낸다는 것을 나타냅니다.
+반면, TIS 데이터셋은 참조 파일의 CDS 서열과 일치하는 ORF의 서열만 포함하며, 서열에는 이진 레이블이 할당되어 진정한 TIS를 나타냅니다.
+서열 맥락을 포착하기 위해, 각 TIS 중심 서열에는 상류와 하류에 각각 30개의 뉴클레오타이드가 포함되어 총 60개의 뉴클레오타이드 길이가 됩니다.</p>
+<h2 id="tokenization-embadding">Tokenization / embadding<a class="headerlink" href="#tokenization-embadding" title="Permanent link">&para;</a></h2>
+<h3 id="k-mer">토큰화 (K-mer 분할)<a class="headerlink" href="#k-mer" title="Permanent link">&para;</a></h3>
+<p>DNA 서열을 6개 염기 단위(6-mer)로 겹치게 잘라서 각 조각을 하나의 "단어"처럼 취급합니다. 자르는 간격(스트라이드)은 과제마다 다릅니다.</p>
+<ul>
+<li><strong>CDS 분류</strong>: 스트라이드 3 (3칸씩 건너뜀)</li>
+<li><strong>TIS 분류</strong>: 스트라이드 1 (1칸씩 이동)</li>
+</ul>
+<h3 id="_1">임베딩 (수치 변환)<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+<p>각 k-mer를 사전 학습된 DNABERT 모델로 <strong>768차원 벡터</strong>로 변환합니다. 여기에 시작/끝을 나타내는 특수 토큰 <code>[CLS]</code>, <code>[EOS]</code>도 추가됩니다.</p>
+<h3 id="_2">최종 행렬 크기<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>CDS 분류</strong>: 서열 1개 → <strong>(512 × 768)</strong> 행렬</li>
+<li><strong>TIS 분류</strong>: 서열 1개 → <strong>(62 × 768)</strong> 행렬</li>
+</ul>
+<p>한 마디로, DNA 서열을 6글자씩 겹쳐 자른 뒤 → DNABERT로 의미 있는 숫자 벡터로 변환해 → 모델이 학습할 수 있는 행렬 형태로 만드는 과정입니다.</p>
+<h2 id="model">Model<a class="headerlink" href="#model" title="Permanent link">&para;</a></h2>
+<div class="arithmatex">\[
+\begin{align}
+\text{MultiHead(M)} = \text{ConCat}(\text{head}_1,\cdots,\text{head}_h)W^O
+\end{align}
+$$\]</div>
+<div class="arithmatex">\[\begin{align}
+\text{head}_i = \text{softmax}(\frac{MW^Q_i(MW^K_i)^T}{\sqrt{d_k}})MW^V_i
+\end{align}\]</div>
+<p>$$
+- <span class="arithmatex">\(M\)</span> : Token embeddings
+- <span class="arithmatex">\(\text{}_i\)</span> : attention head 
+- <span class="arithmatex">\(W^Q_i\)</span> : learnable Query Matrix
+- <span class="arithmatex">\(W^K_i\)</span> : learnable Key Matrix
+- <span class="arithmatex">\(W^V_i\)</span> : learnable Value Matrix</p>
+<p>Self Attention Head 는 각 토큰이 Sequence 내 다른 모든 토큰과 관련되어있는
+맥락적 관련성을 결정한다.
+Transformer 계층에서 나온 최종 Hidden representation 는
+Sequence 수준 또는 Token 수준 분류 작업에 사용된다.</p>
+<p>핵심 아이디어는 <strong>토큰 임베딩 행렬 M</strong> 을 여러 개의 "시점(head)"으로 동시에 바라보는 것입니다.</p>
+<p>각 head iii는 세 개의 학습 가능한 행렬로 MMM을 세 가지 역할로 변환합니다.
+- <strong>Query​</strong>: "나는 무엇을 찾고 있나?"
+- <strong>Key​</strong>: "나는 어떤 정보를 갖고 있나?"
+- <strong>Value</strong>: "실제로 전달할 정보"</p>
+<p>Query와 Key의 내적을 dk\sqrt{d_k}dk​​로 나눠 스케일링한 뒤 softmax를 취하면
+<strong>각 토큰이 다른 모든 토큰에 얼마나 주목할지</strong>를 나타내는 attention 가중치가 됩니다.
+이 가중치로 Value를 가중합해 맥락이 반영된 표현을 만듭니다.</p>
+<p>h 개의 head가 각자 다른 관점(문법, 의미, 지시 관계 등)의 패턴을 병렬로 학습한 뒤, 결과를 <strong>concat</strong>하고 출력 행렬 <span class="arithmatex">\(W^O\)</span> 로 선형 변환해 하나의 표현으로 통합합니다.</p>
+<p>이렇게 만들어진 <strong>Hidden representation</strong>은 시퀀스 전체의 맥락을 담고 있어, 문장 분류(sequence-level) 또는 개체명 인식 같은 토큰별 분류(token-level) 등 다양한 downstream task에 활용됩니다.</p>
+<h2 id="fine-tunning">Fine Tunning<a class="headerlink" href="#fine-tunning" title="Permanent link">&para;</a></h2>
+<p>DNA 서열 앞에 <code>[CLS]</code> 토큰을 붙이고,
+DNABERT로 각 k-mer의 임베딩(벡터 표현)을 생성합니다.</p>
+<h3 id="self-attention">Self-Attention<a class="headerlink" href="#self-attention" title="Permanent link">&para;</a></h3>
+<p>Query, Key, Value 행렬을 이용해
+각 k-mer가 다른 k-mer에 얼마나 주목해야 할지 가중치를 계산합니다.
+이 가중치로 임베딩을 업데이트해서 문맥을 반영한 표현을 만듭니다.</p>
+<p>DNABERT 위에 아래 세 층을 추가합니다.
+- <strong>Pooler Layer</strong>: <code>[CLS]</code> 토큰의 임베딩을 고정 크기 벡터로 압축
+- <strong>Fully Connected Layer</strong>: 압축된 벡터를 클래스 수에 맞게 변환
+- <strong>Softmax Layer</strong>: 각 클래스의 확률값으로 변환</p>
+<p>손실 함수로 <strong>크로스 엔트로피</strong>를 사용합니다.</p>
+<p>$$</p>
+<div class="arithmatex">\[\begin{align}
+L=\sum_{i=1}^{N}y_i' \log(y_i)
+\end{align}\]</div>
+<p>$$</p>
+<p>정답 레이블(<span class="arithmatex">\(y_i'\)</span>​)과 예측 확률(<span class="arithmatex">\(y_i\)</span>​) 사이의 차이를 최소화하는 방향으로 학습합니다.
+-&gt; 잔차 최소화 방향
+두 실험 모두 N=2 인 이진 분류(양성/음성)입니다.</p>
+<p>한 마디로, <code>[CLS]</code> 토큰이 전체 서열의 정보를 요약하고,
+그 벡터를 분류기에 넣어 <strong>CDS 여부</strong> 또는 <strong>TIS 여부</strong>를 판별하는 구조입니다.</p>
+<p><strong>[CLS]</strong> : 이 문장 전체를 요약해줘</p>
+<p>각 k-mer를 숫자 덩어리(벡터)로 바꿔요. 이걸 <strong>임베딩</strong>이라고 하는데, 컴퓨터가 글자 대신 숫자로 의미를 이해하게 해주는 번역 과정이에요.</p>
+<p>이 단계가 핵심이에요. 사람이 글을 읽을 때 앞뒤 문맥을 보듯, AI도 각 k-mer가 <strong>다른 k-mer들과 얼마나 관련 있는지</strong> 가중치를 계산해요.</p>
+<p>예: "나는 은행에 갔다" — 이때 '은행'이 금융기관인지 나무인지는 앞뒤 단어를 봐야 알 수 있죠. DNA도 마찬가지예요.</p>
+<p>Query(질문), Key(열쇠), Value(내용) 세 행렬을 이용해서 "이 조각은 저 조각과 얼마나 관련 있나?"를 계산하고, 그 결과로 각 조각의 벡터를 업데이트해요.</p>
+<p>4단계: 분류기에 넣기</p>
+<ul>
+<li>
+<p><strong>Pooler Layer</strong>: [CLS] 토큰 하나만 뽑아서 서열 전체 정보를 담은 <strong>하나의 압축 벡터</strong>로 만들어요</p>
+</li>
+<li>
+<p><strong>Fully Connected Layer</strong>: 그 벡터를 "양성이냐, 음성이냐" 두 칸짜리 판단표로 변환해요</p>
+</li>
+<li>
+<p><strong>Softmax Layer</strong>: 최종적으로 "양성일 확률 70%, 음성일 확률 30%"처럼 확률값으로 바꿔줘요</p>
+</li>
+</ul>
+<p>정답과 예측 확률의 차이를 <strong>크로스 엔트로피 손실</strong>로 계산해요.
+쉽게 말하면, "틀렸을수록 벌점이 크다"는 점수표예요. 이 벌점을 최소화하도록 파라미터를 조금씩 수정하면서 AI가 점점 정확해지는 거예요.</p>
+<p><strong>[CLS] 토큰 = 반장</strong> 역할. 반 전체(DNA 서열)의 정보를 한 명이 요약해서 선생님(분류기)한테 보고하고, 선생님이 "이 서열이 CDS(단백질 만드는 부분)인가, TIS(번역 시작점)인가"를 최종 판정하는 구조예요.</p>
+<h2 id="experiment-setup">Experiment Setup<a class="headerlink" href="#experiment-setup" title="Permanent link">&para;</a></h2>
+<p>DNA 서열 → k-mer 토큰화 → DNABERT 임베딩 →
+트랜스포머 층 → 분류 헤드 → 최종 예측 순서로 진행됩니다.
+AdamW 옵티마이저와 선형 워밍업 학습률 스케줄을 사용합니다.</p>
+<p>테스트 세트에는 <strong>훈련 때 본 적 없는 생물종만</strong> 포함시켜,
+모델이 새로운 생물에도 일반화될 수 있는지 평가합니다.</p>
+<p>CDS 분류 실험
+- <strong>목표</strong>: 게놈에서 단백질 코딩 구간(CDS) 판별
+- <strong>환경</strong>: NVIDIA A100 GPU 2대 (각 80GB), 배치 크기 512
+- <strong>소요 시간</strong>: 2 에포크, 총 37시간</p>
+<p>TIS 분류 실험</p>
+<ul>
+<li><strong>목표</strong>: 60bp 서열에서 진짜 번역 시작 지점(TIS) 판별</li>
+<li><strong>환경</strong>: NVIDIA RTX A5000 GPU 1대 (24GB), 배치 크기 768</li>
+<li><strong>소요 시간</strong>: 3 에포크, 총 19시간</li>
+</ul>
+<p>4가지 표준 이진 분류 지표를 사용합니다.
+$$</p>
+<div class="arithmatex">\[\begin{align}
+&amp;\text{Accuracy}=\frac{TP+TN}{TP+TN+FP+FN} \\
+&amp;\text{Precision}=\frac{TP}{TP+FP} \\
+&amp;\text{Recall}=\frac{TP}{TP+FN} \\
+&amp;\text{F1 Score}=2\frac{Precision*Recall}{Precision+Recall}
+\end{align}\]</div>
+<p>$$</p>
+<p>TIS 예측 후, 같은 ORF 내 여러 후보 중 <strong>예측 확률이 가장 높은 TIS 하나만</strong> 선택합니다. 최종 결과는 CSV와 GFF 파일로 출력해 다른 유전체 분석 도구와 호환되도록 합니다.</p>
+<p>하나의 ORF 안에는 시작 코돈(ATG 등)이 여러 개 존재할 수 있어서, TIS 후보도 여러 개가 생깁니다. 예를 들어 아래처럼 하나의 ORF에 3개의 후보 TIS가 있다고 가정하면:</p>
+<table>
+<thead>
+<tr>
+<th>후보 TIS</th>
+<th>예측 확률</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>위치 A</td>
+<td>0.42</td>
+</tr>
+<tr>
+<td>위치 B</td>
+<td><strong>0.87</strong></td>
+</tr>
+<tr>
+<td>위치 C</td>
+<td>0.31</td>
+</tr>
+</tbody>
+</table>
+<h2 id="result">Result<a class="headerlink" href="#result" title="Permanent link">&para;</a></h2>
+<p>이 섹션에서는 실험에서 얻은 결과를 세 가지 주요 평가 단계로 구성하여 제시합니다.
+먼저, 우리는 표준 평가 지표를 사용하여 모델 훈련과 테스트 중 성능을 보고하고,
+그 효과를 평가합니다.
+다음으로, 실험적으로 검증된 서열을 대상으로 모델을 실제 환경에서 평가하며,
+실험실에서 검증된 생물학적 데이터에 대한 예측 정확도를 실질적으로 평가합니다.
+마지막으로, 저희 접근법을 최신 유전자 주석 도구와 비교하여 정확성과 효율성을 벤치마크합니다.
+이 평가들은 모델의 기능과 게놈 주석에서의 실용적 응용 가능성에 대한 포괄적인 이해를 제공합니다.</p>
+<h3 id="training-performance">Training performance<a class="headerlink" href="#training-performance" title="Permanent link">&para;</a></h3>
+<p>이 섹션에서는 다양한 실험에서 모델을 훈련시켜 얻은 결과를 제시합니다.</p>
+<ol>
+<li><strong>CDS 분류</strong>
+    <a href="#f4">그림 4</a> 는 여러 단계에 걸친 훈련 손실 진행과 두 개의 미세 조정 시기에 걸친 평가 지표 비교를 보여줍니다. 초기에는 모델이 학습함에 따라 훈련 손실이 급격히 감소하여 수천 번의 반복 후 안정화됩니다. 그러나 어려운 예제를 가진 미니 배치 구성으로 인해 훈련 손실이 산발적으로 급증하는 현상이 관찰되었습니다. 이를 조사하기 위해 우리는 다양한 무작위 시드로 훈련을 반복하고 손실 역학을 분석하여 재현성 연구를 수행했습니다. <a href="#sup1">보충 섹션 S3과 S4</a> 에 자세히 설명된 바와 같이, 모델은 시드 간 일관된 수렴 패턴을 보여주었습니다. 우리는 급증 수를 정량화하고 손실 분포 통계를 계산했으며, 이러한 변동이 불안정성을 나타내는 것이 아니라 훈련의 미세한 확률적 변동임을 확인했습니다. 이러한 변동에도 불구하고, 전반적인 추세는 손실이 일관되게 감소하고 있어 효과적인 학습을 뒷받침합니다. 두 번째 미세 조정 시기 이후에는 평가 지표에서 미미한 개선이 나타났습니다(<a href="#TB1">표 1).</a>
+    추가 훈련이 수확 체감이나 과적합 위험을 초래할 수 있음을 시사하는 성능 향상과 추가 훈련의 계산 비용이 결합되어 2년 에포크에서 미세 조정을 중단했습니다. <a href="#TB1">표 1은</a> 훈련 시기와 최종 테스트 세트 모두의 평가 지표를 보여줍니다. 모델은 정밀도, 호출율, 정확도 98%를 초과하는 높은 분류 성능을 달성했습니다. 평가 손실이 약간 감소한 것은 시기 간 안정적이고 효과적인 학습을 시사합니다. 최종 모델은 독립적인 테스트 세트에서 평가되었으며, 높은 정확도(99.43%)를 유지하면서 평가 손실은 0.0211이었습니다. 이 결과는 모델의 견고성과 일반화 능력을 확인시켜 줍니다.</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Valid</th>
+<th></th>
+<th>Test</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td>Epoch 1</td>
+<td>Epoch 2</td>
+<td>Final Score</td>
+</tr>
+<tr>
+<td>Loss</td>
+<td>0.021233</td>
+<td>0.020184</td>
+<td>0.021132</td>
+</tr>
+<tr>
+<td>Precision</td>
+<td>0.981846</td>
+<td>0.983868</td>
+<td>0.983253</td>
+</tr>
+<tr>
+<td>F1</td>
+<td>0.984364</td>
+<td>0.985109</td>
+<td>0.984544</td>
+</tr>
+<tr>
+<td>Accuracy</td>
+<td>0.994265</td>
+<td>0.994553</td>
+<td>0.994364</td>
+</tr>
+<tr>
+<td>Recall</td>
+<td>0.986916</td>
+<td>0.986357</td>
+<td>0.985844</td>
+</tr>
+<tr>
+<td>참고: 표는 훈련 시기와 최종 테스트 세트 모두에 대한 평가 지표를 제시합니다. 이 모델은 정확도, 회상율, 정확도가 98%를 초과하는 분류 성능을 달성했습니다. 테스트 세트 평가는 손실이 최소화되고 정밀도가 높으며 모델의 일반화 능력을 확인합니다.</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<ol>
+<li><strong>TIS 분류</strong>
+    <a href="#f5">그림 5</a> 는 TIS 분류 실험의 훈련 손실 추세와 평가 지표를 보여줍니다. CDS 분류와 유사하게, 훈련 손실은 초기 급격한 감소를 보이지만 안정화되기 전에는 미세한 진동이 나타납니다. <a href="#TB2">표 2</a> 의 평가 지표는 시기별로 일관된 성능 향상을 보여주며, 정밀도, 호출율, F1 점수가 각 반복마다 소폭 증가합니다. 그러나 그림에서 볼 수 있듯이, 이 지표들은 세 번째 에포크 이후에는 정체되어 추가적인 의미 있는 향상이 없어 과적합을 피하기 위해 에포크 3에서 조기 중단되었습니다. 최종 시험 평가에서 정확도(94.13%)와 평가 손실(0.1546)이 확인되었습니다.
+    정확도 계산에 사용되는 TIS 주석은 NCBI에서 얻어졌으며, NCBI는 유전자 예측 도구를 사용해 항상 실제 정보를 반영하지 않을 수 있기 때문에, 우리는 박테리아 게놈에 대해 모든 실험적으로 검증된 TIS 데이터를 사용한 기존 방법과 도구를 벤치마킹했습니다.</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Valid</th>
+<th></th>
+<th></th>
+<th>Test</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td>Epoch 1</td>
+<td>Epoch 2</td>
+<td>Epoch 3</td>
+<td>Final Score</td>
+</tr>
+<tr>
+<td>Loss</td>
+<td>0.161598</td>
+<td>0.158706</td>
+<td>0.156721</td>
+<td>0.154614</td>
+</tr>
+<tr>
+<td>Precision</td>
+<td>0.938289</td>
+<td>0.939115</td>
+<td>0.939882</td>
+<td>0.941508</td>
+</tr>
+<tr>
+<td>F1</td>
+<td>0.937736</td>
+<td>0.938943</td>
+<td>0.939723</td>
+<td>0.941359</td>
+</tr>
+<tr>
+<td>Accuracy</td>
+<td>0.937755</td>
+<td>0.938949</td>
+<td>0.939728</td>
+<td>0.941364</td>
+</tr>
+<tr>
+<td>Recall</td>
+<td>0.937754</td>
+<td>0.938948</td>
+<td>0.939728</td>
+<td>0.941363</td>
+</tr>
+<tr>
+<td>참고: 표는 훈련 시기와 최종 테스트 세트 모두에 대한 평가 지표를 제시합니다. 이 모델은 93%를 넘는 정밀도, 회상 및 정확도로 분류 성능을 달성했습니다. 테스트 세트 평가는 일반화 능력을 최종 정확도 94.13%로 확인했습니다.</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="evaluating-length-bias-and-overfitting-in-cds-classification">Evaluating length bias and overfitting in CDS classification'<a class="headerlink" href="#evaluating-length-bias-and-overfitting-in-cds-classification" title="Permanent link">&para;</a></h3>
+<p>CDS 분류기의 견고성을 보장하고 ORF 길이와 같은 단순 특성에 대한 과적합 위험을 줄이기 위해, 우리는 훈련 중에 길이 인식 균형 전략을 도입했습니다. CDS 데이터셋에서는 음의 예시를 ORF 길이를 기준으로 양성(진짜 CDS) 예시의 길이 분포에 맞게 다운샘플링되었습니다. 이 접근법은 모델이 길이에 의존하는 것을 막고 판별적 서열 특징 학습을 촉진하기 위해 설계되었습니다. 모델이 얼마나 잘 일반화되는지, 그리고 예측 정확도가 ORF 길이에 따라 변하는지 평가하기 위해 길이 층화 추론 분석을 수행했습니다. 우리는 벤치마킹 데이터셋에서 검증된 CDS 주석을 가진 5개의 검증된 유전체를 사용했습니다. 모든 후보 ORF를 추출하고, 학습된 모델을 사용해 그 부호화 상태를 예측했으며, 실제 주석과 예측을 비교했습니다. ORF는 길이별로 네 개의 빈으로 그룹화되었으며, 짧은 길이(&lt;300 bp)부터 매우 긴 길이(2000 bp)까지 다양했습니다. 각 빈에 대해 정밀도, 호출률, 정확도를 계산했고, 각 길이 범주에 속하는 ORF의 수도 세었습니다.</p>
+<p><a href="#f6">그림 6</a> 에서 보듯, 분류기는 모든 ORF 길이에서 일관되게 높은 성능을 달성합니다. 하지만 특히 300 bp 미만의 짧은 ORF는 여전히 테스트 데이터에서 과소대표되어 있어 성능 지표에 대한 신뢰도가 제한될 수 있음을 관찰합니다. 이러한 한계에도 불구하고, 전체 결과는 모델이 분류에 있어 주로 ORF 길이에 의존하지 않는다는 강력한 증거를 제공합니다. 이는 훈련 중 사용되는 길이 균형 절차의 중요성과 효과를 확인시켜 주며, 길이 관련 편향을 완화하고 학습된 서열 표현의 생물학적 관련성을 높인다.</p>
+<p>왼쪽: 다섯 개의 검증된 유전체를 사용한 ORF 길이 빈 전반에 걸친 CDS 분류기 성능 지표(정밀도, 호출율, 정확성). 오른쪽: 길이별 ORF 분포.</p>
+<h3 id="performance-benchmarking-on-experimentally-verified-genomes">Performance benchmarking on experimentally verified genomes<a class="headerlink" href="#performance-benchmarking-on-experimentally-verified-genomes" title="Permanent link">&para;</a></h3>
+<p>GeneLM의 효과는 실험적으로 검증된 CDS를 사용하여 벤치마킹되었습니다. 실제 생물학적 데이터를 이용한 벤치마킹은 이전 연구들에서 확인된 것처럼 유전자 예측 방법 평가의 표준 관행입니다 [[^1], [^5], [^13]]. 이를 바탕으로, 우리는 GeneLM을 널리 사용되는 세 가지 원핵생물 유전자 예측 도구인 Prodigal [[^1], GeneMark-HMM [[^14]], Glimmer3 [[^15]], 그리고 최근 딥러닝 기반 번역 시작 지점 예측기인 TITER [[^16]], DeepGSR [[^17]], DeepTIS [[^18]]와 비교했습니다. 평가는 N-말단 펩타이드 시퀀싱을 기반으로 실험적으로 검증된 TIS를 가진 다섯 개의 세균 및 고세균 유전체— <em>Escherichia coli</em>, <em>Halobacterium salinarum</em>, <em>Natronomonas pharaonis</em>, <em>Mycobacterium tuberculosis</em>, <em>Roseobacter denitrificans</em> —를 대상으로 수행되었습니다. 이들 유기체(<a href="#TB3">표 3</a> 에 나열됨)는 2841개의 검증된 유전자 테스트 세트를 포함해 주석이 달린 TIS가 가장 많았습니다 [[^13]].</p>
+<p>5개의 실험적으로 검증된 박테리아 유전체에 대한 전통적인 TIS 주석 도구의 벤치마킹 결과를 보여주는 검증된 주석과의 비교; 지표에는 일치한 TIS(5'+3' 말단과 3' 말단만)가 포함되며, 괄호 안에 올바르게 예측된 끝의 백분율이 표시되어 있고, 모든 생물체의 성능을 집계한 요약 행이 포함되어 있습니다.</p>
+<table>
+<thead>
+<tr>
+<th>Spceies</th>
+<th>Clade</th>
+<th>Genomes in clade</th>
+<th>Verified Genes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>E.coli</td>
+<td>Enterobacterales</td>
+<td>6311</td>
+<td>769</td>
+</tr>
+<tr>
+<td>H. salinarum</td>
+<td>Archaea</td>
+<td>1125</td>
+<td>530</td>
+</tr>
+<tr>
+<td>N. Pharaonis</td>
+<td>Archaea</td>
+<td>1125</td>
+<td>282</td>
+</tr>
+<tr>
+<td>M. tuberculosis</td>
+<td>Actinobacteria</td>
+<td>8097</td>
+<td>701</td>
+</tr>
+<tr>
+<td>R. denitrificans</td>
+<td>Alphaproteobacteria</td>
+<td>4720</td>
+<td>526</td>
+</tr>
+<tr>
+<td>Prodigal, GeneMark, Glimmer: <a href="#TB4">표 4는</a> 다섯 개의 유전체 전반에 걸친 성능을 요약합니다. GeneLM은 모든 지표에서 고전 기법을 꾸준히 능가했습니다.</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Bacteria</th>
+<th>GC</th>
+<th>TIS</th>
+<th>GeneLM</th>
+<th></th>
+<th>Prodigal</th>
+<th></th>
+<th>GeneMark-HMM</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Matched : %</td>
+<td></td>
+<td></td>
+<td>5'+3'</td>
+<td>3' end</td>
+<td>5'+3'</td>
+<td>3' end</td>
+<td>5'+3'</td>
+<td>3' end</td>
+</tr>
+<tr>
+<td>E.coli</td>
+<td>50.8</td>
+<td>769</td>
+<td>96.7</td>
+<td>99.9</td>
+<td>44.0</td>
+<td>44.9</td>
+<td>77.4</td>
+<td>98.7</td>
+</tr>
+<tr>
+<td>H. salinarum</td>
+<td>65.7</td>
+<td>530</td>
+<td>82.6</td>
+<td>97.0</td>
+<td>45.8</td>
+<td>48.1</td>
+<td>93.0</td>
+<td>100</td>
+</tr>
+<tr>
+<td>N. Pharaonis</td>
+<td>65.6</td>
+<td>701</td>
+<td>89.3</td>
+<td>99.1</td>
+<td>44.4</td>
+<td>48.8</td>
+<td>77.7</td>
+<td>99.0</td>
+</tr>
+<tr>
+<td>M. tuberculosis</td>
+<td>63.1</td>
+<td>315</td>
+<td>78.7</td>
+<td>95.9</td>
+<td>53.7</td>
+<td>55.9</td>
+<td>95.9</td>
+<td>99.7</td>
+</tr>
+<tr>
+<td>R. denitrificans</td>
+<td>58.9</td>
+<td>526</td>
+<td>93.5</td>
+<td>99.4</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>All</td>
+<td>-</td>
+<td>2841</td>
+<td>89.7</td>
+<td>98.6</td>
+<td>37.3</td>
+<td>39.4</td>
+<td>68.1</td>
+<td>80.9</td>
+</tr>
+</tbody>
+</table>
+<p>특히, 5'와 3' 끝 모두에서 가장 많은 일치 TIS를 달성했으며, 예측 실패도 적었습니다.
+<em>E. coli K-12</em> 의 경우 GeneLM은 25개의 TIS만 놓쳤고 Prodigal은 431개의 실패를 기록했습니다.
+GeneMark-HMM은 특히 <em>M. tuberculosis</em> 와 <em>H. salinarum</em> 과 같은 고GC 게놈에서 경쟁력 있는 성능을 보였지만, 5' 시작 정밀도에서는 GeneLM에 뒤처졌습니다.
+Glimmer3는 역사적으로 중요했지만 두 구성 모두에서 성능이 약했습니다.
+스크래치 기반 모델은 반복 변형보다 성능이 떨어져 상류 모티프 모델링이 유익함을 확인했으나, 두 방법 모두 GeneLM에 비해 성능이 떨어졌습니다.</p>
+<p>GenBank 주석에 대한 보다 광범위한 벤치마크는 <a href="#TB5">표 5</a> 에 제시되어 예측된 유전자와 알려진 유전체 주석의 정렬을 강조하며, <a href="#TB6">표 6은</a> 방법 전반에 걸쳐 예측된 CDS 총 수를 요약하여 유전체 전체 count 기반의 관점을 제공합니다.</p>
+<h4 id="5">표 5.<a class="headerlink" href="#5" title="Permanent link">&para;</a></h4>
+<p>GenBank 주석과의 비교: 5개 박테리아 게놈에 걸친 유전자 발견 알고리즘의 성능을 보여주며, 각 항목은 3' 끝에서 GenBank 주석과 일치하는 예측 유전자의 수와 비율을 보고하며, 완전(5'+3') 일치 여부를 보고합니다; 실험적으로 검증되지는 않았지만, 이 벤치마크는 완전한 유전체 전반에 걸친 광범위한 성능을 제공합니다.</p>
+<h4 id="6">표 6.<a class="headerlink" href="#6" title="Permanent link">&para;</a></h4>
+<p>총 예측 CDS: 다섯 개의 실험적으로 검증된 박테리아 유전체에 대한 다섯 가지 유전자 예측 도구 간 총 예측 CDS를 비교한 결과, 마지막 행은 모든 유전체에 걸친 총 CDS 예측을 보여줍니다.</p>
+<table>
+<thead>
+<tr>
+<th>bacteria</th>
+<th>GeneLM</th>
+<th>Prodigal</th>
+<th>GeneMark-HMM</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>E. Coli</td>
+<td>4213</td>
+<td>4347</td>
+<td>4308</td>
+</tr>
+<tr>
+<td>H. salinarum</td>
+<td>2659</td>
+<td>2851</td>
+<td>2762</td>
+</tr>
+<tr>
+<td>N. Pharaonis</td>
+<td>3843</td>
+<td>4204</td>
+<td>4029</td>
+</tr>
+<tr>
+<td>M. tuberculosis</td>
+<td>2737</td>
+<td>2873</td>
+<td>2826</td>
+</tr>
+<tr>
+<td>R. denitrificans</td>
+<td>4006</td>
+<td>4120</td>
+<td>4104</td>
+</tr>
+<tr>
+<td>All</td>
+<td>17468</td>
+<td>18395</td>
+<td>18029</td>
+</tr>
+</tbody>
+</table>
+<p>TITER, DeepGSR, DeepTIS:고전적 유전자 예측 도구 외에도, 우리는 GeneLM을 문헌에서 최근 심층 학습 접근법과 비교해 벤치마킹했습니다. 이 방법들은 직접 추론에 적합한 사전 학습 모델을 제공하지 않기 때문에, 우리는 TIS 예측이라는 특정 과제에 맞게 원핵생물 데이터셋에서 이들의 아키텍처를 재학습했습니다.</p>
+<p>실험적으로 검증된 유전체에서 평가하기 전에, 우리는 먼저 표준 지표인 정밀도, 회상률, F1 점수를 사용하여 균형 잡힌 데이터셋에서 성능을 평가했습니다. <a href="#sup1">보충 그림 S5</a> 에서 보듯, TITER는 더 높은 회상률(77.05%)을 달성했으나 정밀도는 낮은 66.03%를 기록했으며, 이는 양성 TIS 부위에 대해 과대예측하는 경향을 나타냅니다.</p>
+<p>반면 DeepGSR은 더 균형 잡힌 성능(정밀도: 71.99%, 기억률: 73.11%)과 약간 더 높은 F1 점수를 제공했습니다. DeepGSR은 또한 더 긴 학습 시간(106.7시간)이 TITER(84.4시간)에 비해 필요했는데, 이는 더 깊이 있는 구조와 더 많은 매개변수 수 때문으로 보입니다. </p>
+<p>이후 두 모델 모두 5개 박테리아 유전체에 걸쳐 실험적으로 검증된 TIS 데이터셋을 사용해 GeneLM과 함께 벤치마킹되었습니다(<a href="#TB7">표 7</a>). 공정성을 위해 동일한 데이터로 재학습했음에도 불구하고, TITER와 DeepGSR은 GeneLM에 비해 일관되게 낮은 성능을 보였습니다.</p>
+<p>특히 두 모델 모두 <em>R. denitrificans</em> 에서 검증된 TIS 부위를 탐지하지 못했습니다. DeepTIS는 이전에 [[^19]]에서 보고한 바와 같이 아키텍처 및 훈련 정보가 불완전하여 평가할 수 없었습니다.</p>
+<p>Evo2 는 한번에 100만 염기쌍을 모델링 할 수 있다. 
+Evo2 특징 활성화(f/13606) 는 뭔지 모르겠지만 효과 좋다
+우리의 모델은 CDS 영역과 주변 TIS 신호가 512 bp 한계가 있지만 신호가 충분함을 보였다.</p>
+<p>7b : 40VRAM
+40b : ? 답없음</p>
+<h3 id="tis">TIS 예측 설명<a class="headerlink" href="#tis" title="Permanent link">&para;</a></h3>
+<p>모티프 시각화</p>
+<p>y축 (행): [CLS] → 1번째 6-mer → 2번째 6-mer → ... → [SEP] ← Query 토큰
+x축 (열): [CLS] → 1번째 6-mer → 2번째 6-mer → ... → [SEP] ← Key 토큰</p>
+<p>DNABERT는 BERT 기반 트랜스포머 모델로, <strong>12개의 Layer</strong>와 각 Layer마다 <strong>12개의 Attention Head</strong>를 갖고 있습니다. 이 둘은 역할이 완전히 다릅니다.</p>
+<p><strong>Layer(레이어)</strong> 는 트랜스포머 모델이 입력 서열을 처리하는 <strong>처리 단계의 깊이</strong>입니다. 사람이 글을 읽을 때 "글자 → 단어 → 문장 → 문맥"으로 점진적으로 이해하는 것처럼, 트랜스포머도 레이어가 깊어질수록 더 추상적이고 고차원적인 패턴을 학습합니다.<a href="https://journal.kci.go.kr/jksci/archive/articlePdf?artiId=ART003300051">journal.kci</a></p>
+<ul>
+<li>
+<p><strong>얕은 레이어 (Layer 1~4)</strong>: 단순한 국소적(local) 서열 패턴 학습, 예를 들어 인접한 코돈 관계</p>
+</li>
+<li>
+<p><strong>중간 레이어 (Layer 5~8)</strong>: 중거리 서열 패턴, 예를 들어 특정 기능적 모티프 인식</p>
+</li>
+<li>
+<p><strong>깊은 레이어 (Layer 9~12)</strong>: 멀리 떨어진 서열 간의 장거리 의미 관계 추론<a href="https://journal.kci.go.kr/jksci/archive/articlePdf?artiId=ART003300051">journal.kci</a></p>
+</li>
+</ul>
+<p>논문에서 "Layer 1의 11번째 head"가 TIS 상류 30bp에 집중한다는 것은, <strong>가장 얕은 단계에서도 이미 프로모터 위치를 감지</strong>하고 있다는 의미입니다.</p>
+<p><strong>Head(헤드)</strong> 는 동일한 레이어 안에서 <strong>서로 다른 관점으로 동시에 서열을 바라보는 독립적인 시선</strong>입니다. DNABERT는 한 레이어에 12개의 Head가 병렬로 존재하며, 각 Head는 서로 다른 가중치 행렬(WQ,WK,WVW^Q, W^K, W^VWQ,WK,WV)을 가지므로 각기 다른 특징에 집중합니다.<a href="https://seungseop.tistory.com/29">seungseop.tistory</a></p>
+<p>NLP로 비유하면:
+- Head 1: 주어-동사 관계에 집중
+- Head 2: 형용사-명사 관계에 집중
+- Head 3: 문장 전체 맥락에 집중</p>
+<p>DNA에서는:
+- 어떤 Head: TIS 근처의 Shine-Dalgarno 서열(리보솜 결합 부위) 패턴에 집중
+- 다른 Head: 코돈 주기성 패턴에 집중
+- 또 다른 Head: 상류 프로모터(-35, -10 박스) 위치에 집중</p>
+<p><code>입력 DNA 서열 (6-mer 토큰화)         ↓  ┌─────────────────────────┐  │ Layer 1                 │  │  Head1 Head2 ... Head12 │  ← 12가지 다른 시선으로 동시에 봄  └────────────┬────────────┘               ↓ (결합 후 다음 레이어로)  ┌─────────────────────────┐  │ Layer 2                 │  │  Head1 Head2 ... Head12 │  └────────────┬────────────┘               ↓             ...  ┌─────────────────────────┐  │ Layer 12                │  │  Head1 Head2 ... Head12 │  ← 가장 추상적인 패턴  └────────────┬────────────┘               ↓          [CLS] 토큰 → 분류 헤드 → TIS / 비-TIS</code></p>
+<h2 id="_3">논문 결과의 생물학적 의미<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p>논문에서 <strong>Layer 1, Head 11</strong>이 TIS로부터 정확히 <strong>-30bp 위치</strong>에 강한 어텐션을 보인 것은 단순한 우연이 아닙니다 . 세균 유전자에서 -35bp 부근은 <strong>σ 인자가 결합하는 프로모터 박스(-35 element)</strong>가 위치하는 생물학적으로 핵심적인 위치입니다. 즉, 모델이 명시적으로 가르쳐주지 않아도 <strong>데이터에서 스스로 생물학적 조절 규칙을 학습</strong>했다는 강력한 증거입니다 .</p>
+<p>세균의 시작 코돈(TIS) 상류에는 크게 두 가지 핵심 요소가 위치합니다.</p>
+<h2 id="shine-dalgarno-sd-sequence">Shine-Dalgarno 서열 (SD sequence)<a class="headerlink" href="#shine-dalgarno-sd-sequence" title="Permanent link">&para;</a></h2>
+<p>TIS로부터 <strong>약 5~10bp 상류</strong>에 위치하는 <strong>리보솜 결합 부위(RBS, Ribosome Binding Site)</strong> 입니다. 일반적으로 <code>AGGAGG</code> 같은 퓨린(purine) 풍부 서열로, 16S rRNA의 3' 말단과 상보적으로 결합하여 리보솜이 mRNA에 정확히 자리잡도록 안내합니다. 세균 번역 개시에서 가장 핵심적인 역할을 합니다.</p>
+<h2 id="promoter">프로모터 서열 (Promoter)<a class="headerlink" href="#promoter" title="Permanent link">&para;</a></h2>
+<p>TIS로부터 <strong>약 -10bp ~ -35bp 상류</strong>에는 RNA 중합효소(RNA polymerase)와 σ(시그마) 인자가 결합하는 <strong>프로모터 박스</strong>가 위치합니다.</p>
+<ul>
+<li>
+<p><strong>-10 element (Pribnow box)</strong>: <code>TATAAT</code> 컨센서스 서열, RNA 중합효소가 DNA 이중 나선을 풀기 시작하는 위치</p>
+</li>
+<li>
+<p><strong>-35 element</strong>: <code>TTGACA</code> 컨센서스 서열, σ 인자가 처음 인식하고 결합하는 위치</p>
+</li>
+</ul>
+<h2 id="_4">논문과의 연결<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<p>GeneLM 논문에서 <strong>Layer 1의 Head 11이 TIS 상류 -30bp 위치에 강한 어텐션</strong>을 보인 것은 바로 이 <strong>프로모터 -35 element</strong>에 해당하는 생물학적으로 유의미한 위치입니다. 모델이 명시적으로 프로모터를 가르쳐 주지 않았음에도, 수백만 개의 세균 게놈 데이터에서 스스로 이 패턴을 학습했다는 점에서 매우 중요한 발견입니다.</p>
+<h2 id="tis_1">TIS 상류 구조 요약<a class="headerlink" href="#tis_1" title="Permanent link">&para;</a></h2>
+<p>text</p>
+<p><code>5'─────────────────────────────────────────────▶3'    -35 element   -10 element   SD 서열    TIS   (TTGACA)      (TATAAT)    (AGGAGG)   (ATG)       ↑              ↑           ↑        ↑   σ인자 결합    DNA 풀림 시작  리보솜 결합  번역 시작   ~-35bp        ~-10bp       ~-5~10bp    0</code></p>
+<p>즉, 시작 코돈 하나만 봐서는 TIS를 정확히 예측할 수 없고, 상류의 SD 서열과 프로모터 패턴을 함께 고려해야 하는데, GeneLM의 Attention 메커니즘이 이 복합적인 맥락을 동시에 학습하고 있다는 것이 논문의 핵심 메시지입니다.</p>
+<pre><code>      [CLS] ATG CGT GTA TAA ... [SEP]  ← Key (어디를 보는가)
+</code></pre>
+<p>[CLS]      ■    □   □   □   □        □
+ATGCGT     □    ■   □   □   □        □
+TGCGTA     □    □   ■   □   □        □
+  ...            ← TIS 위치 기준 -30bp 토큰에 밝은 색이 집중되면
+[SEP]      □    □   □   □   □        ■</p>
+<p>■ = 높은 어텐션
+□ = 낮은 어텐션</p>
+<table>
+<thead>
+<tr>
+<th>Genome</th>
+<th>GPU</th>
+<th>VRAM</th>
+<th>Batch</th>
+<th>Genome bp</th>
+<th>Time(min)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Bacteria-1</td>
+<td>A100</td>
+<td>79.15</td>
+<td>5375</td>
+<td>4641 652</td>
+<td>21.12</td>
+</tr>
+<tr>
+<td>Bacteria-2</td>
+<td>A100</td>
+<td>79.15</td>
+<td>5375</td>
+<td>2668 776</td>
+<td>9.75</td>
+</tr>
+<tr>
+<td>Bacteria-3</td>
+<td>A100</td>
+<td>79.15</td>
+<td>5375</td>
+<td>4411 532</td>
+<td>21.73</td>
+</tr>
+<tr>
+<td>Bacteria-1</td>
+<td>RTX A5000</td>
+<td>23.66</td>
+<td>1556</td>
+<td>4641 652</td>
+<td>33.08</td>
+</tr>
+<tr>
+<td>Bacteria-2</td>
+<td>RTX A5000</td>
+<td>23.66</td>
+<td>1556</td>
+<td>2668 776</td>
+<td>15.60</td>
+</tr>
+<tr>
+<td>Bacteria-3</td>
+<td>RTX A5000</td>
+<td>23.66</td>
+<td>1556</td>
+<td>4411 532</td>
+<td>34.80</td>
+</tr>
+<tr>
+<td>Bacteria-1</td>
+<td>RTX A2000</td>
+<td>11.65</td>
+<td>710</td>
+<td>4641 652</td>
+<td>101.76</td>
+</tr>
+<tr>
+<td>Bacteria-2</td>
+<td>RTX A2000</td>
+<td>11.65</td>
+<td>710</td>
+<td>2668 776</td>
+<td>47.74</td>
+</tr>
+<tr>
+<td>Bacteria-3</td>
+<td>RTX A2000</td>
+<td>11.65</td>
+<td>710</td>
+<td>4411 532</td>
+<td>106.20</td>
+</tr>
+</tbody>
+</table>
+<p>이 성능 격차는 트랜스포머 기반 추론의 메모리 바운드 특성을 반영합니다: 더 큰 배치 크기는 패딩과 메모리 전송을 줄여 처리량을 높입니다. 그럼에도 불구하고 이 모델은 A5000과 같은 중급 GPU에서도 여전히 사용 가능하여 많은 연구소에서 접근성을 제공합니다.
+향후 연구에서는 혼합정밀도 추론, 양자화, 모델 증류와 같은 기법을 적용하여 추론 속도를 더욱 향상시킬 수 있습니다. 이러한 개선은 계산 자원이 제한된 환경에 맞게 GeneLM을 적응시키는 데 도움을 주어 더 넓은 채택을 촉진할 것입니다.</p>
+<h3 id="_5">주요 사항<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<ul>
+<li>BERT 기반 게놈 언어 모델이 개발되어 원핵생물 게놈에서 코딩 서열 영역을 식별하고 번역 시작 부위를 분류합니다.</li>
+<li>이 모델은 처음에 인간 게놈 데이터셋에서 자가 지도 학습을 통해 DNA 청크 표현을 학습합니다. 그 후 유전자 주석 주석을 위해 두 단계 파이프라인을 통해 적응됩니다: 첫째, 모델이 ORF를 CDS와 비CDS 영역으로 분류하고, 두 번째 모델이 진정한 TIS 부위를 식별하는 정교화 단계가 있습니다.</li>
+<li>전통적인 유전자 예측 도구와 비교 평가를 수행하여 정밀도, 기억 및 확장성 향상을 평가합니다. 검증된 박테리아 유전체에 대한 사례 연구를 수행하여 모델이 실제 유전체 주석 작업에서 적용 가능하고 견고함을 입증합니다.</li>
+</ul>
+<p>이 모델은 초기에는 대규모 자가 지도 학습을 활용하기 위해 인간 게놈 서열을 사전 학습했지만, 진핵생물과 원핵생물 게놈 간의 상당한 진화적·조직적 차이를 인정합니다.
+이 도메인 격차를 해소하기 위해 GeneLM은 방대하고 다양한 박테리아 데이터셋에서 광범위하게 미세 조정되어 원핵생물 특이적 특징에 적응할 수 있게 되었습니다.
+고GC 함량을 가진 여러 박테리아 계통군에서 관찰된 강한 성능과 실험적으로 검증된 데이터셋과의 벤치마킹은 이러한 적응이 실제로 효과적임을 입증합니다.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../../../..", "features": [], "search": "../../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\ud074\ub9bd\ubcf4\ub4dc\uc5d0 \ubcf5\uc0ac\ub428", "clipboard.copy": "\ud074\ub9bd\ubcf4\ub4dc\ub85c \ubcf5\uc0ac", "search.result.more.one": "\uc774 \ubb38\uc11c\uc5d0\uc11c 1\uac1c\uc758 \uac80\uc0c9 \uacb0\uacfc \ub354 \ubcf4\uae30", "search.result.more.other": "\uc774 \ubb38\uc11c\uc5d0\uc11c #\uac1c\uc758 \uac80\uc0c9 \uacb0\uacfc \ub354 \ubcf4\uae30", "search.result.none": "\uac80\uc0c9\uc5b4\uc640 \uc77c\uce58\ud558\ub294 \ubb38\uc11c\uac00 \uc5c6\uc2b5\ub2c8\ub2e4", "search.result.one": "1\uac1c\uc758 \uc77c\uce58\ud558\ub294 \ubb38\uc11c", "search.result.other": "#\uac1c\uc758 \uc77c\uce58\ud558\ub294 \ubb38\uc11c", "search.result.placeholder": "\uac80\uc0c9\uc5b4\ub97c \uc785\ub825\ud558\uc138\uc694", "search.result.term.missing": "\ud3ec\ud568\ub418\uc9c0 \uc54a\uc740 \uac80\uc0c9\uc5b4", "select.version": "\ubc84\uc804 \uc120\ud0dd"}, "version": null}</script>
+    
+    
+      <script src="../../../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+      
+    
+  </body>
+</html>
