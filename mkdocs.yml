@@ -6,6 +6,69 @@ site_url: https://e4m-hash.github.io
 exclude_docs: |
   **/attachments/*.md
 
+# 내부 링크가 깨지면(404) 빌드 로그에 경고로 드러나도록 검증 활성화
+validation:
+  links:
+    absolute_links: warn
+    unrecognized_links: warn
+    anchors: warn
+
+# 사이드바 = 데이터 분석 스택 순서(수집→파이프라인→도메인→통계→AI→도구).
+# 새 노트를 만들면 해당 계층 아래에 한 줄 추가하면 된다. (순서는 여기서 관리)
+nav:
+  - 홈: index.md
+  - 소개: about.md
+  - 노트:
+    - 개요 (Data Analysis Stack): notes/index.md
+    - 데이터 수집: notes/data-collection/index.md
+    - 파이프라인: notes/pipeline/index.md
+    - 생물정보:
+      - 개요: notes/bioinformatics/index.md
+      - 16S rRNA: notes/bioinformatics/omics/16s rRNA.md
+      - Whole Metagenome: notes/bioinformatics/omics/WholeMetaGenome.md
+      - single-cell RNA: notes/bioinformatics/omics/singlecell-RNA.md
+    - 통계:
+      - 개요: notes/statistics/index.md
+      - 이론:
+        - 소개: notes/statistics/theory/소개.md
+        - 집단의 비교: notes/statistics/theory/집단의 비교.md
+        - 분할표분석: notes/statistics/theory/분할표분석.md
+        - 로짓분석: notes/statistics/theory/로짓분석.md
+        - 반복측정 자료분석: notes/statistics/theory/반복측정 자료분석.md
+        - 생존분석: notes/statistics/theory/생존분석.md
+      - 실습:
+        - 집단의 비교: notes/statistics/practice/집단의 비교.md
+        - 분할표 분석: notes/statistics/practice/분할표 분석.md
+        - 로짓 분석: notes/statistics/practice/로짓 분석.md
+        - 공분산 분석: notes/statistics/practice/공분산 분석.md
+        - 반복측정자료분석: notes/statistics/practice/반복측정자료분석.md
+        - 생존분석: notes/statistics/practice/생존분석.md
+        - bweight: notes/statistics/practice/bweight.md
+        - 분산식 유도:
+          - OR 의 분산 유도: notes/statistics/practice/Prove/OR 의 분산 유도.md
+          - RR 의 분산 유도: notes/statistics/practice/Prove/RR 의 분산 유도.md
+    - AI:
+      - 개요: notes/ai/index.md
+      - 머신러닝: notes/ai/machine-learning/index.md
+      - 딥러닝:
+        - 개요: notes/ai/deep-learning/index.md
+        - Ollama + WebUI: notes/ai/deep-learning/Ollama + Webui.md
+      - 논문 리뷰:
+        - 목록: notes/ai/papers/index.md
+        - Best practices (microbiome ML): notes/ai/papers/Best practices for developing microbiome-based disease diagnostic classifiers through machine learning.md
+        - gLMs — 요약: notes/ai/papers/Genomic language models (gLMs) decode bacterial genomes for improved gene prediction and translation initiation site identification/Summary.md
+        - gLMs — 본문(ko): notes/ai/papers/Genomic language models (gLMs) decode bacterial genomes for improved gene prediction and translation initiation site identification/Main (ko).md
+    - 도구 · 환경:
+      - 개요: notes/environment/index.md
+      - LaTeX 수식 지원: notes/environment/markdown/LaTeX 수식 지원.md
+      - Mermaid 다이어그램: notes/environment/markdown/Mermaid 다이어그램.md
+  - 프로젝트:
+    - 목록: projects/index.md
+    - FunOMIC2 Nextflow Pipeline: projects/FunOMIC2 Nextflow Pipeline.md
+    - KLAS 서지정보 매크로: projects/KLAS (bibliographic information) Macro.md
+    - KT Aivle Big Project: projects/KT Aivle Big Project.md
+  - 블로그: blog/index.md
+
 theme:
     name: 'material'
     language: ko

@@ -1,0 +1,27 @@
+---
+date: 2026-06-29
+slug: Fungi Taxonomy Detecting
+categories:
+  - work
+tags:
+  - "#fungi"
+---
+
+# Intro
+
+WholeMetaGenome Sequencing Data 에서, Fungi 검출은 쉽지 않은 일이다.
+EukDetect, FunOMIC2, FungiGut 등 제공된 도구를 사용하였지만
+FunOMIC2 , Fungigut 은 Database 문제로 제대로 검출 되지 않았고
+EukDetect 는 124개 샘플중 42 개만 검출되었으며 그마저도 샘플당 평균 1종만 나타났다.
+( 이 문제를 지적한 benchmark 논문이 존재한다. )
+
+현재, CGF catalog
+- 원 논문: [A genomic compendium of cultivated human gut fungi (Cell, 2024)](https://doi.org/10.1016/j.cell.2024.04.043)
+- 원본 코드: <https://github.com/yexianingyue/Cultivated-Gut-Fungi>
+
+를 사용하여 검출에 성공했지만 Aspergillus sp. 가 중앙값 52% 이상을 차지하며
+Saccharomyces cerevisiae 와 Candida 가 4~5 위 정도로 적게 나타났다.
+
+이는 원 논문에서 명시한 내용 (Saccharomyces cerevisiae 와 Candida 우점) 과 명백히 다른 결과이다.
+
+이를 어떻게 처리해야할지 고민이다.

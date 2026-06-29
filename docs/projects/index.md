@@ -4,6 +4,6 @@
 
 ## 목록
 
-- [FunOMIC2 Nextflow Pipeline](FunOMIC2 Nextflow Pipeline)
-- [KLAS 서지정보 매크로](KLAS (bibliographic information) Macro)
-- [KT Aivle Big Project](KT Aivle Big Project)
+- [FunOMIC2 Nextflow Pipeline](<FunOMIC2 Nextflow Pipeline.md>)
+- [KLAS 서지정보 매크로](<KLAS (bibliographic information) Macro.md>)
+- [KT Aivle Big Project](<KT Aivle Big Project.md>)
