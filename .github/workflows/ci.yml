@@ -11,6 +11,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0   # RSS 플러그인이 글의 git 날짜를 올바르게 읽도록 전체 이력 확보
       - uses: actions/setup-python@v5
         with:
           python-version: 3.x
