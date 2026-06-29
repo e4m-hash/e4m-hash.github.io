@@ -2778,8 +2778,8 @@
 </ul>
 </li>
 </ul>
-<p><span class="arithmatex">\((\hat{p_1}, \hat{p_2})^T\)</span>가 근사적으로 정규분포를 따른다고 하자:
-$<span class="arithmatex">\((\hat{p_1}, \hat{p_2})^T \sim N\left((p_1, p_2)^T, \Sigma\right)\)</span>$</p>
+<p><span class="arithmatex">\((\hat{p_1}, \hat{p_2})^T\)</span>가 근사적으로 정규분포를 따른다고 하자:</p>
+<div class="arithmatex">\[(\hat{p_1}, \hat{p_2})^T \sim N\left((p_1, p_2)^T, \Sigma\right)\]</div>
 <div class="arithmatex">\[g(p_1, p_2) = \ln \frac{p_1}{1-p_1} - \ln \frac{p_2}{1-p_2}\]</div>
 <p>여기서 공분산 행렬은:</p>
 <div class="arithmatex">\[\Sigma = \begin{bmatrix}
@@ -2806,8 +2806,8 @@ Cov(\hat{p_1}, \hat{p_2}) &amp; Var(\hat{p_2})
 -\frac{1}{p_2(1-p_2)}
 \end{bmatrix}
 \]</div>
-<p>델타 방법에 의해 :
-$<span class="arithmatex">\(Var(g(\hat{p_1}, \hat{p_2})) \approx \nabla g^T \Sigma \nabla g\)</span>$</p>
+<p>델타 방법에 의해 :</p>
+<div class="arithmatex">\[Var(g(\hat{p_1}, \hat{p_2})) \approx \nabla g^T \Sigma \nabla g\]</div>
 <div class="arithmatex">\[
 \begin{align}
 Var(\ln \hat{OR}) &amp;\approx \begin{bmatrix} \frac{1}{p_1(1-p_1)}, -\frac{1}{p_2(1-p_2)} \end{bmatrix} \begin{bmatrix} Var(\hat p_1) &amp; 0 \\ 0 &amp; Var(\hat p_2) \end{bmatrix} \begin{bmatrix} \frac{1}{p_1(1-p_1)} \\ -\frac{1}{p_2(1-p_2)} \end{bmatrix}

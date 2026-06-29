@@ -2876,8 +2876,8 @@
 <li><span class="arithmatex">\(\nabla g = [ {1 \over p_1}, -{1 \over p_2} ]^T\)</span></li>
 </ul>
 <h5 id="_3">델타 방법<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h5>
-<p><span class="arithmatex">\((\hat{p_1}, \hat{p_2})^T\)</span>가 근사적으로 이변량 정규분포를 따른다고 하자:
-$<span class="arithmatex">\((\hat{p_1}, \hat{p_2})^T \sim N_2\left((p_1, p_2)^T, \Sigma\right)\)</span>$</p>
+<p><span class="arithmatex">\((\hat{p_1}, \hat{p_2})^T\)</span>가 근사적으로 이변량 정규분포를 따른다고 하자:</p>
+<div class="arithmatex">\[(\hat{p_1}, \hat{p_2})^T \sim N_2\left((p_1, p_2)^T, \Sigma\right)\]</div>
 <p>여기서 공분산 행렬은:</p>
 <div class="arithmatex">\[\Sigma = \begin{bmatrix}
 Var(\hat{p_1}) &amp; Cov(\hat{p_1}, \hat{p_2}) \\
@@ -2953,11 +2953,11 @@ SE(\ln{\hat {RR}})\;=\;\sqrt{\frac{1}{n_{11}}-\frac{1}{n_{1+}}+\frac{1}{n_{21}}-
 \]</div>
 <p>중심극한정리에 의해 표본크기가 충분히 클 때:
 - <span class="arithmatex">\(\hat{p_1} \sim N(p_1, \frac{p_1(1-p_1)}{n_{1+}})\)</span>
-- <span class="arithmatex">\(\hat{p_2} \sim N(p_2, \frac{p_2(1-p_2)}{n_{2+}})\)</span>
-$<span class="arithmatex">\(\ln \hat{RR} \approx N\left(\ln RR, \hat{Var}(\ln \hat{RR}\right)\)</span>$
-$<span class="arithmatex">\(\ln \hat{RR} \approx N\left(\ln RR, \frac{1-p_1}{n_{1+}p_1} + \frac{1-p_2}{n_{2+}p_2}\right)\)</span>$</p>
-<p>표준화 :
-$<span class="arithmatex">\(Z = \frac{\ln \hat{RR} - \ln RR}{SE(\ln \hat{RR})} \sim N(0,1)\)</span>$</p>
+- <span class="arithmatex">\(\hat{p_2} \sim N(p_2, \frac{p_2(1-p_2)}{n_{2+}})\)</span></p>
+<div class="arithmatex">\[\ln \hat{RR} \approx N\left(\ln RR, \hat{Var}(\ln \hat{RR}\right)\]</div>
+<div class="arithmatex">\[\ln \hat{RR} \approx N\left(\ln RR, \frac{1-p_1}{n_{1+}p_1} + \frac{1-p_2}{n_{2+}p_2}\right)\]</div>
+<p>표준화 :</p>
+<div class="arithmatex">\[Z = \frac{\ln \hat{RR} - \ln RR}{SE(\ln \hat{RR})} \sim N(0,1)\]</div>
 
 
 
