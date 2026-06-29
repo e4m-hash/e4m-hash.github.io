@@ -1,9 +1,4 @@
-# 노트 — Data Analysis Stack
-
-데이터 분석을 워크플로 순서대로 쌓은 스택으로 정리합니다.
-원천 데이터를 모으는 단계에서 시작해, 재현 가능한 파이프라인으로 처리하고,
-도메인(생물정보)·통계·AI로 해석하는 흐름입니다. 각 계층이 곧 폴더입니다.
-
+# Data Analysis
 ```mermaid
 graph LR
   A["데이터 수집<br/>Collection"] --> B["파이프라인<br/>Pipeline"]

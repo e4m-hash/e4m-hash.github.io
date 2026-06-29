@@ -18,7 +18,6 @@
 - KLAS Macro
 
 ## 공부 노트
-데이터 분석 워크플로를 스택 계층으로 정리합니다.
 
 → [**노트 전체 (Data Analysis Stack)**](notes/index.md)
 
