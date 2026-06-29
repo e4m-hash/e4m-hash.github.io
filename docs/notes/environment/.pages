@@ -1,0 +1,7 @@
+title: 도구 · 환경
+# markdown/ 하위 파일을 섹션 바로 아래에 평평하게 노출
+nav:
+  - index.md
+  - LaTeX 수식 지원: "markdown/LaTeX 수식 지원.md"
+  - Mermaid 다이어그램: "markdown/Mermaid 다이어그램.md"
+  - ...

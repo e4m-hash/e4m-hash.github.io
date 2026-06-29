@@ -1,0 +1,6 @@
+nav:
+  - 홈: index.md
+  - about.md          # 첫 H1 "소개" 사용
+  - notes
+  - projects
+  - 블로그: blog

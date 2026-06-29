@@ -1,0 +1,8 @@
+title: 논문 리뷰
+# gLMs 논문은 하위 폴더에 있으나 섹션 바로 아래에 평평하게 노출
+nav:
+  - index.md
+  - Best practices (microbiome ML): "Best practices for developing microbiome-based disease diagnostic classifiers through machine learning.md"
+  - gLMs — 요약: "Genomic language models (gLMs) decode bacterial genomes for improved gene prediction and translation initiation site identification/Summary.md"
+  - gLMs — 본문(ko): "Genomic language models (gLMs) decode bacterial genomes for improved gene prediction and translation initiation site identification/Main (ko).md"
+  - ...
