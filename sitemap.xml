@@ -2,190 +2,198 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://e4m-hash.github.io/</loc>
-         <lastmod>2026-06-29</lastmod>
+         <lastmod>2026-07-01</lastmod>
     </url>
     <url>
          <loc>https://e4m-hash.github.io/about/</loc>
-         <lastmod>2026-06-29</lastmod>
+         <lastmod>2026-07-01</lastmod>
     </url>
     <url>
          <loc>https://e4m-hash.github.io/blog/</loc>
-         <lastmod>2026-06-29</lastmod>
+         <lastmod>2026-07-01</lastmod>
     </url>
     <url>
          <loc>https://e4m-hash.github.io/blog/2026/06/29/Fungi%20Taxonomy%20Detecting/</loc>
-         <lastmod>2026-06-29</lastmod>
+         <lastmod>2026-07-01</lastmod>
     </url>
     <url>
          <loc>https://e4m-hash.github.io/blog/2026/06/29/%EC%9E%91%EC%84%B1-%EC%9B%90%EC%B9%99/</loc>
-         <lastmod>2026-06-29</lastmod>
+         <lastmod>2026-07-01</lastmod>
     </url>
     <url>
          <loc>https://e4m-hash.github.io/notes/</loc>
-         <lastmod>2026-06-29</lastmod>
+         <lastmod>2026-07-01</lastmod>
     </url>
     <url>
          <loc>https://e4m-hash.github.io/notes/ai/</loc>
-         <lastmod>2026-06-29</lastmod>
+         <lastmod>2026-07-01</lastmod>
     </url>
     <url>
          <loc>https://e4m-hash.github.io/notes/ai/deep-learning/</loc>
-         <lastmod>2026-06-29</lastmod>
+         <lastmod>2026-07-01</lastmod>
     </url>
     <url>
          <loc>https://e4m-hash.github.io/notes/ai/deep-learning/Ollama%20%2B%20Webui/</loc>
-         <lastmod>2026-06-29</lastmod>
+         <lastmod>2026-07-01</lastmod>
     </url>
     <url>
          <loc>https://e4m-hash.github.io/notes/ai/machine-learning/</loc>
-         <lastmod>2026-06-29</lastmod>
+         <lastmod>2026-07-01</lastmod>
     </url>
     <url>
          <loc>https://e4m-hash.github.io/notes/ai/papers/</loc>
-         <lastmod>2026-06-29</lastmod>
+         <lastmod>2026-07-01</lastmod>
     </url>
     <url>
          <loc>https://e4m-hash.github.io/notes/ai/papers/Best%20practices%20for%20developing%20microbiome-based%20disease%20diagnostic%20classifiers%20through%20machine%20learning/</loc>
-         <lastmod>2026-06-29</lastmod>
+         <lastmod>2026-07-01</lastmod>
     </url>
     <url>
          <loc>https://e4m-hash.github.io/notes/ai/papers/Genomic%20language%20models%20%28gLMs%29%20decode%20bacterial%20genomes%20for%20improved%20gene%20prediction%20and%20translation%20initiation%20site%20identification/Main%20%28ko%29/</loc>
-         <lastmod>2026-06-29</lastmod>
+         <lastmod>2026-07-01</lastmod>
     </url>
     <url>
          <loc>https://e4m-hash.github.io/notes/ai/papers/Genomic%20language%20models%20%28gLMs%29%20decode%20bacterial%20genomes%20for%20improved%20gene%20prediction%20and%20translation%20initiation%20site%20identification/Summary/</loc>
-         <lastmod>2026-06-29</lastmod>
+         <lastmod>2026-07-01</lastmod>
     </url>
     <url>
          <loc>https://e4m-hash.github.io/notes/bioinformatics/</loc>
-         <lastmod>2026-06-29</lastmod>
+         <lastmod>2026-07-01</lastmod>
     </url>
     <url>
          <loc>https://e4m-hash.github.io/notes/bioinformatics/omics/16s%20rRNA/</loc>
-         <lastmod>2026-06-29</lastmod>
+         <lastmod>2026-07-01</lastmod>
     </url>
     <url>
          <loc>https://e4m-hash.github.io/notes/bioinformatics/omics/WholeMetaGenome/</loc>
-         <lastmod>2026-06-29</lastmod>
+         <lastmod>2026-07-01</lastmod>
     </url>
     <url>
          <loc>https://e4m-hash.github.io/notes/bioinformatics/omics/singlecell-RNA/</loc>
-         <lastmod>2026-06-29</lastmod>
+         <lastmod>2026-07-01</lastmod>
     </url>
     <url>
          <loc>https://e4m-hash.github.io/notes/data-collection/</loc>
-         <lastmod>2026-06-29</lastmod>
+         <lastmod>2026-07-01</lastmod>
     </url>
     <url>
          <loc>https://e4m-hash.github.io/notes/environment/</loc>
-         <lastmod>2026-06-29</lastmod>
+         <lastmod>2026-07-01</lastmod>
     </url>
     <url>
          <loc>https://e4m-hash.github.io/notes/environment/container/Docker/</loc>
-         <lastmod>2026-06-29</lastmod>
+         <lastmod>2026-07-01</lastmod>
+    </url>
+    <url>
+         <loc>https://e4m-hash.github.io/notes/environment/container/Podman/</loc>
+         <lastmod>2026-07-01</lastmod>
+    </url>
+    <url>
+         <loc>https://e4m-hash.github.io/notes/environment/k8s/Kubernetes/</loc>
+         <lastmod>2026-07-01</lastmod>
     </url>
     <url>
          <loc>https://e4m-hash.github.io/notes/environment/markdown/LaTeX%20%EC%88%98%EC%8B%9D%20%EC%A7%80%EC%9B%90/</loc>
-         <lastmod>2026-06-29</lastmod>
+         <lastmod>2026-07-01</lastmod>
     </url>
     <url>
          <loc>https://e4m-hash.github.io/notes/environment/markdown/Mermaid%20%EB%8B%A4%EC%9D%B4%EC%96%B4%EA%B7%B8%EB%9E%A8/</loc>
-         <lastmod>2026-06-29</lastmod>
+         <lastmod>2026-07-01</lastmod>
     </url>
     <url>
          <loc>https://e4m-hash.github.io/notes/pipeline/</loc>
-         <lastmod>2026-06-29</lastmod>
+         <lastmod>2026-07-01</lastmod>
     </url>
     <url>
          <loc>https://e4m-hash.github.io/notes/statistics/</loc>
-         <lastmod>2026-06-29</lastmod>
+         <lastmod>2026-07-01</lastmod>
     </url>
     <url>
          <loc>https://e4m-hash.github.io/notes/statistics/practice/bweight/</loc>
-         <lastmod>2026-06-29</lastmod>
+         <lastmod>2026-07-01</lastmod>
     </url>
     <url>
          <loc>https://e4m-hash.github.io/notes/statistics/practice/%EA%B3%B5%EB%B6%84%EC%82%B0%20%EB%B6%84%EC%84%9D/</loc>
-         <lastmod>2026-06-29</lastmod>
+         <lastmod>2026-07-01</lastmod>
     </url>
     <url>
          <loc>https://e4m-hash.github.io/notes/statistics/practice/%EB%A1%9C%EC%A7%93%20%EB%B6%84%EC%84%9D/</loc>
-         <lastmod>2026-06-29</lastmod>
+         <lastmod>2026-07-01</lastmod>
     </url>
     <url>
          <loc>https://e4m-hash.github.io/notes/statistics/practice/%EB%B0%98%EB%B3%B5%EC%B8%A1%EC%A0%95%EC%9E%90%EB%A3%8C%EB%B6%84%EC%84%9D/</loc>
-         <lastmod>2026-06-29</lastmod>
+         <lastmod>2026-07-01</lastmod>
     </url>
     <url>
          <loc>https://e4m-hash.github.io/notes/statistics/practice/%EB%B6%84%ED%95%A0%ED%91%9C%20%EB%B6%84%EC%84%9D/</loc>
-         <lastmod>2026-06-29</lastmod>
+         <lastmod>2026-07-01</lastmod>
     </url>
     <url>
          <loc>https://e4m-hash.github.io/notes/statistics/practice/%EC%83%9D%EC%A1%B4%EB%B6%84%EC%84%9D/</loc>
-         <lastmod>2026-06-29</lastmod>
+         <lastmod>2026-07-01</lastmod>
     </url>
     <url>
          <loc>https://e4m-hash.github.io/notes/statistics/practice/%EC%A7%91%EB%8B%A8%EC%9D%98%20%EB%B9%84%EA%B5%90/</loc>
-         <lastmod>2026-06-29</lastmod>
+         <lastmod>2026-07-01</lastmod>
     </url>
     <url>
          <loc>https://e4m-hash.github.io/notes/statistics/practice/Prove/OR%20%EC%9D%98%20%EB%B6%84%EC%82%B0%20%EC%9C%A0%EB%8F%84/</loc>
-         <lastmod>2026-06-29</lastmod>
+         <lastmod>2026-07-01</lastmod>
     </url>
     <url>
          <loc>https://e4m-hash.github.io/notes/statistics/practice/Prove/RR%20%EC%9D%98%20%EB%B6%84%EC%82%B0%20%EC%9C%A0%EB%8F%84/</loc>
-         <lastmod>2026-06-29</lastmod>
+         <lastmod>2026-07-01</lastmod>
     </url>
     <url>
          <loc>https://e4m-hash.github.io/notes/statistics/theory/%EB%A1%9C%EC%A7%93%EB%B6%84%EC%84%9D/</loc>
-         <lastmod>2026-06-29</lastmod>
+         <lastmod>2026-07-01</lastmod>
     </url>
     <url>
          <loc>https://e4m-hash.github.io/notes/statistics/theory/%EB%B0%98%EB%B3%B5%EC%B8%A1%EC%A0%95%20%EC%9E%90%EB%A3%8C%EB%B6%84%EC%84%9D/</loc>
-         <lastmod>2026-06-29</lastmod>
+         <lastmod>2026-07-01</lastmod>
     </url>
     <url>
          <loc>https://e4m-hash.github.io/notes/statistics/theory/%EB%B6%84%ED%95%A0%ED%91%9C%EB%B6%84%EC%84%9D/</loc>
-         <lastmod>2026-06-29</lastmod>
+         <lastmod>2026-07-01</lastmod>
     </url>
     <url>
          <loc>https://e4m-hash.github.io/notes/statistics/theory/%EC%83%9D%EC%A1%B4%EB%B6%84%EC%84%9D/</loc>
-         <lastmod>2026-06-29</lastmod>
+         <lastmod>2026-07-01</lastmod>
     </url>
     <url>
          <loc>https://e4m-hash.github.io/notes/statistics/theory/%EC%86%8C%EA%B0%9C/</loc>
-         <lastmod>2026-06-29</lastmod>
+         <lastmod>2026-07-01</lastmod>
     </url>
     <url>
          <loc>https://e4m-hash.github.io/notes/statistics/theory/%EC%A7%91%EB%8B%A8%EC%9D%98%20%EB%B9%84%EA%B5%90/</loc>
-         <lastmod>2026-06-29</lastmod>
+         <lastmod>2026-07-01</lastmod>
     </url>
     <url>
          <loc>https://e4m-hash.github.io/projects/</loc>
-         <lastmod>2026-06-29</lastmod>
+         <lastmod>2026-07-01</lastmod>
     </url>
     <url>
          <loc>https://e4m-hash.github.io/projects/FunOMIC2%20Nextflow%20Pipeline/</loc>
-         <lastmod>2026-06-29</lastmod>
+         <lastmod>2026-07-01</lastmod>
     </url>
     <url>
          <loc>https://e4m-hash.github.io/projects/KLAS%20%28bibliographic%20information%29%20Macro/</loc>
-         <lastmod>2026-06-29</lastmod>
+         <lastmod>2026-07-01</lastmod>
     </url>
     <url>
          <loc>https://e4m-hash.github.io/projects/KT%20Aivle%20Big%20Project/</loc>
-         <lastmod>2026-06-29</lastmod>
+         <lastmod>2026-07-01</lastmod>
     </url>
     <url>
          <loc>https://e4m-hash.github.io/blog/archive/2026/</loc>
-         <lastmod>2026-06-29</lastmod>
+         <lastmod>2026-07-01</lastmod>
     </url>
     <url>
          <loc>https://e4m-hash.github.io/blog/category/work/</loc>
-         <lastmod>2026-06-29</lastmod>
+         <lastmod>2026-07-01</lastmod>
     </url>
     <url>
          <loc>https://e4m-hash.github.io/blog/category/guide/</loc>
-         <lastmod>2026-06-29</lastmod>
+         <lastmod>2026-07-01</lastmod>
     </url>
 </urlset>
