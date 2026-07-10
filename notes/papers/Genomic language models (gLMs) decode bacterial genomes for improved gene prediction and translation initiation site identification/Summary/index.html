@@ -8,7 +8,7 @@
       
       
       
-        <link rel="canonical" href="https://e4m-hash.github.io/notes/ai/papers/Genomic%20language%20models%20%28gLMs%29%20decode%20bacterial%20genomes%20for%20improved%20gene%20prediction%20and%20translation%20initiation%20site%20identification/Summary/">
+        <link rel="canonical" href="https://e4m-hash.github.io/notes/papers/Genomic%20language%20models%20%28gLMs%29%20decode%20bacterial%20genomes%20for%20improved%20gene%20prediction%20and%20translation%20initiation%20site%20identification/Summary/">
       
       
         <link rel="prev" href="../../Best%20practices%20for%20developing%20microbiome-based%20disease%20diagnostic%20classifiers%20through%20machine%20learning/">
@@ -20,10 +20,10 @@
         
       
       
-        <link rel="alternate" type="application/rss+xml" title="RSS 피드 생성완료" href="../../../../../feed_rss_created.xml">
-        <link rel="alternate" type="application/rss+xml" title="RSS 피드 업데이트완료" href="../../../../../feed_rss_updated.xml">
+        <link rel="alternate" type="application/rss+xml" title="RSS 피드 생성완료" href="../../../../feed_rss_created.xml">
+        <link rel="alternate" type="application/rss+xml" title="RSS 피드 업데이트완료" href="../../../../feed_rss_updated.xml">
       
-      <link rel="icon" href="../../../../../assets/images/favicon.png">
+      <link rel="icon" href="../../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
     
     
@@ -32,10 +32,10 @@
       
     
     
-      <link rel="stylesheet" href="../../../../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.484c7ddc.min.css">
       
         
-        <link rel="stylesheet" href="../../../../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -54,7 +54,7 @@
       
     
     
-    <script>__md_scope=new URL("../../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -70,7 +70,7 @@
     
     
     
-    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="pink" data-md-color-accent="indigo">
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="dark" data-md-color-accent="indigo">
   
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
@@ -95,7 +95,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="상단/헤더">
-    <a href="../../../../.." title="BEAK HEESUN Portfolio" class="md-header__button md-logo" aria-label="BEAK HEESUN Portfolio" data-md-component="logo">
+    <a href="../../../.." title="BEAK HEESUN Portfolio" class="md-header__button md-logo" aria-label="BEAK HEESUN Portfolio" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -128,7 +128,7 @@
     
     
     
-    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="pink" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="dark" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
     
       <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6m0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4M7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3"/></svg>
@@ -138,7 +138,7 @@
     
     
     
-    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="pink" data-md-color-accent="blue"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="white" data-md-color-accent="blue"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
     
       <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3"/></svg>
@@ -219,7 +219,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="네비게이션" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../../../.." title="BEAK HEESUN Portfolio" class="md-nav__button md-logo" aria-label="BEAK HEESUN Portfolio" data-md-component="logo">
+    <a href="../../../.." title="BEAK HEESUN Portfolio" class="md-nav__button md-logo" aria-label="BEAK HEESUN Portfolio" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -237,7 +237,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../.." class="md-nav__link">
+      <a href="../../../.." class="md-nav__link">
         
   
   
@@ -264,7 +264,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../about/" class="md-nav__link">
+      <a href="../../../../about/" class="md-nav__link">
         
   
   
@@ -311,6 +311,8 @@
       
         
       
+        
+      
     
     
     
@@ -323,7 +325,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../../" class="md-nav__link ">
+            <a href="../../../" class="md-nav__link ">
               
   
   
@@ -373,6 +375,10 @@
           
         
       
+        
+      
+        
+      
     
     
     
@@ -385,7 +391,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../../data-collection/" class="md-nav__link ">
+            <a href="../../../data-collection/" class="md-nav__link ">
               
   
   
@@ -402,6 +408,11 @@
 
             </a>
             
+              
+              <label class="md-nav__link " for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
           </div>
         
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
@@ -415,6 +426,180 @@
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2_2" id="__nav_3_2_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    curatedMetagenomicData
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    curatedMetagenomicData
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../data-collection/curatedMetagenomicData/main/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Download
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2_3" id="__nav_3_2_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ncbi
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Ncbi
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../data-collection/ncbi/main/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Main
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
               
             
           </ul>
@@ -450,7 +635,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../../pipeline/" class="md-nav__link ">
+            <a href="../../../pipeline/" class="md-nav__link ">
               
   
   
@@ -505,6 +690,8 @@
       
         
       
+        
+      
     
     
     
@@ -517,7 +704,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../../bioinformatics/" class="md-nav__link ">
+            <a href="../../../bioinformatics/" class="md-nav__link ">
               
   
   
@@ -616,7 +803,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../bioinformatics/omics/16s%20rRNA/" class="md-nav__link">
+      <a href="../../../bioinformatics/omics/16s%20rRNA/" class="md-nav__link">
         
   
   
@@ -644,7 +831,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../bioinformatics/omics/WholeMetaGenome/" class="md-nav__link">
+      <a href="../../../bioinformatics/omics/WholeMetaGenome/" class="md-nav__link">
         
   
   
@@ -672,7 +859,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../bioinformatics/omics/singlecell-RNA/" class="md-nav__link">
+      <a href="../../../bioinformatics/omics/singlecell-RNA/" class="md-nav__link">
         
   
   
@@ -680,6 +867,273 @@
     
   
     single-cell RNA
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_4_3" id="__nav_3_4_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tools
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Tools
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../bioinformatics/tools/BBduk/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    출처
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../bioinformatics/tools/Bracken/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    정의
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../bioinformatics/tools/EukDetect/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    EukDetect
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../bioinformatics/tools/Fastp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    출처
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../bioinformatics/tools/Kracken2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    정의
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../bioinformatics/tools/MetaPhlan/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    정의
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../bioinformatics/tools/bowtie2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    개요
   
 
     
@@ -738,7 +1192,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../../statistics/" class="md-nav__link ">
+            <a href="../../../statistics/" class="md-nav__link ">
               
   
   
@@ -843,7 +1297,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../statistics/theory/%EC%86%8C%EA%B0%9C/" class="md-nav__link">
+      <a href="../../../statistics/theory/%EC%86%8C%EA%B0%9C/" class="md-nav__link">
         
   
   
@@ -871,7 +1325,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../statistics/theory/%EC%A7%91%EB%8B%A8%EC%9D%98%20%EB%B9%84%EA%B5%90/" class="md-nav__link">
+      <a href="../../../statistics/theory/%EC%A7%91%EB%8B%A8%EC%9D%98%20%EB%B9%84%EA%B5%90/" class="md-nav__link">
         
   
   
@@ -899,7 +1353,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../statistics/theory/%EB%B6%84%ED%95%A0%ED%91%9C%EB%B6%84%EC%84%9D/" class="md-nav__link">
+      <a href="../../../statistics/theory/%EB%B6%84%ED%95%A0%ED%91%9C%EB%B6%84%EC%84%9D/" class="md-nav__link">
         
   
   
@@ -927,7 +1381,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../statistics/theory/%EB%A1%9C%EC%A7%93%EB%B6%84%EC%84%9D/" class="md-nav__link">
+      <a href="../../../statistics/theory/%EB%A1%9C%EC%A7%93%EB%B6%84%EC%84%9D/" class="md-nav__link">
         
   
   
@@ -955,7 +1409,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../statistics/theory/%EB%B0%98%EB%B3%B5%EC%B8%A1%EC%A0%95%20%EC%9E%90%EB%A3%8C%EB%B6%84%EC%84%9D/" class="md-nav__link">
+      <a href="../../../statistics/theory/%EB%B0%98%EB%B3%B5%EC%B8%A1%EC%A0%95%20%EC%9E%90%EB%A3%8C%EB%B6%84%EC%84%9D/" class="md-nav__link">
         
   
   
@@ -983,7 +1437,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../statistics/theory/%EC%83%9D%EC%A1%B4%EB%B6%84%EC%84%9D/" class="md-nav__link">
+      <a href="../../../statistics/theory/%EC%83%9D%EC%A1%B4%EB%B6%84%EC%84%9D/" class="md-nav__link">
         
   
   
@@ -1084,7 +1538,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../statistics/practice/%EC%A7%91%EB%8B%A8%EC%9D%98%20%EB%B9%84%EA%B5%90/" class="md-nav__link">
+      <a href="../../../statistics/practice/%EC%A7%91%EB%8B%A8%EC%9D%98%20%EB%B9%84%EA%B5%90/" class="md-nav__link">
         
   
   
@@ -1112,7 +1566,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../statistics/practice/%EB%B6%84%ED%95%A0%ED%91%9C%20%EB%B6%84%EC%84%9D/" class="md-nav__link">
+      <a href="../../../statistics/practice/%EB%B6%84%ED%95%A0%ED%91%9C%20%EB%B6%84%EC%84%9D/" class="md-nav__link">
         
   
   
@@ -1140,7 +1594,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../statistics/practice/%EB%A1%9C%EC%A7%93%20%EB%B6%84%EC%84%9D/" class="md-nav__link">
+      <a href="../../../statistics/practice/%EB%A1%9C%EC%A7%93%20%EB%B6%84%EC%84%9D/" class="md-nav__link">
         
   
   
@@ -1168,7 +1622,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../statistics/practice/%EA%B3%B5%EB%B6%84%EC%82%B0%20%EB%B6%84%EC%84%9D/" class="md-nav__link">
+      <a href="../../../statistics/practice/%EA%B3%B5%EB%B6%84%EC%82%B0%20%EB%B6%84%EC%84%9D/" class="md-nav__link">
         
   
   
@@ -1196,7 +1650,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../statistics/practice/%EB%B0%98%EB%B3%B5%EC%B8%A1%EC%A0%95%EC%9E%90%EB%A3%8C%EB%B6%84%EC%84%9D/" class="md-nav__link">
+      <a href="../../../statistics/practice/%EB%B0%98%EB%B3%B5%EC%B8%A1%EC%A0%95%EC%9E%90%EB%A3%8C%EB%B6%84%EC%84%9D/" class="md-nav__link">
         
   
   
@@ -1224,7 +1678,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../statistics/practice/%EC%83%9D%EC%A1%B4%EB%B6%84%EC%84%9D/" class="md-nav__link">
+      <a href="../../../statistics/practice/%EC%83%9D%EC%A1%B4%EB%B6%84%EC%84%9D/" class="md-nav__link">
         
   
   
@@ -1252,7 +1706,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../statistics/practice/bweight/" class="md-nav__link">
+      <a href="../../../statistics/practice/bweight/" class="md-nav__link">
         
   
   
@@ -1333,7 +1787,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../statistics/practice/Prove/OR%20%EC%9D%98%20%EB%B6%84%EC%82%B0%20%EC%9C%A0%EB%8F%84/" class="md-nav__link">
+      <a href="../../../statistics/practice/Prove/OR%20%EC%9D%98%20%EB%B6%84%EC%82%B0%20%EC%9C%A0%EB%8F%84/" class="md-nav__link">
         
   
   
@@ -1361,7 +1815,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../statistics/practice/Prove/RR%20%EC%9D%98%20%EB%B6%84%EC%82%B0%20%EC%9C%A0%EB%8F%84/" class="md-nav__link">
+      <a href="../../../statistics/practice/Prove/RR%20%EC%9D%98%20%EB%B6%84%EC%82%B0%20%EC%9C%A0%EB%8F%84/" class="md-nav__link">
         
   
   
@@ -1410,8 +1864,6 @@
                 
   
   
-    
-  
   
   
     
@@ -1425,21 +1877,19 @@
       
         
       
-        
-      
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_6" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_6" >
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../" class="md-nav__link ">
+            <a href="../../../ai/" class="md-nav__link ">
               
   
   
@@ -1463,7 +1913,7 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_6_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_6_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3_6">
             <span class="md-nav__icon md-icon"></span>
             
@@ -1501,7 +1951,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../machine-learning/" class="md-nav__link ">
+            <a href="../../../ai/machine-learning/" class="md-nav__link ">
               
   
   
@@ -1568,7 +2018,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../deep-learning/" class="md-nav__link ">
+            <a href="../../../ai/deep-learning/" class="md-nav__link ">
               
   
   
@@ -1612,7 +2062,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../deep-learning/Ollama%20%2B%20Webui/" class="md-nav__link">
+      <a href="../../../ai/deep-learning/Ollama%20%2B%20Webui/" class="md-nav__link">
         
   
   
@@ -1628,6 +2078,441 @@
   
 
       </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_7" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../environment/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    도구 · 환경
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_7" id="__nav_3_7_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    도구 · 환경
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_7_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_7_2" id="__nav_3_7_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    마크다운
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_7_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_7_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    마크다운
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../environment/markdown/LaTeX%20%EC%88%98%EC%8B%9D%20%EC%A7%80%EC%9B%90/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    LaTeX 수식 지원
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../environment/markdown/Mermaid%20%EB%8B%A4%EC%9D%B4%EC%96%B4%EA%B7%B8%EB%9E%A8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mermaid 다이어그램
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_7_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_7_3" id="__nav_3_7_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Container
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_7_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_7_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Container
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../environment/container/Docker/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Docker
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../environment/container/Podman/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Podman
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../environment/container/nextflow/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    구조
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_7_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_7_4" id="__nav_3_7_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    K8s
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_7_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_7_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    K8s
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../environment/k8s/Kubernetes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Kubernetes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -1668,7 +2553,7 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_6_4" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_8" checked>
         
           
           <div class="md-nav__link md-nav__container">
@@ -1690,14 +2575,14 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_3_6_4" id="__nav_3_6_4_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_3_8" id="__nav_3_8_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_6_4_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_3_6_4">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_8_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_8">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -1760,10 +2645,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_6_4_3" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_8_3" checked>
         
           
-          <label class="md-nav__link" for="__nav_3_6_4_3" id="__nav_3_6_4_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3_8_3" id="__nav_3_8_3_label" tabindex="0">
             
   
   
@@ -1781,8 +2666,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_3_6_4_3_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_3_6_4_3">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_8_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_8_3">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -2257,411 +3142,6 @@
     </li>
   
 
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-      
-        
-          
-        
-      
-        
-      
-        
-      
-        
-      
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_7" >
-        
-          
-          <div class="md-nav__link md-nav__container">
-            <a href="../../../../environment/" class="md-nav__link ">
-              
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    도구 · 환경
-  
-
-    
-  </span>
-  
-  
-
-            </a>
-            
-              
-              <label class="md-nav__link " for="__nav_3_7" id="__nav_3_7_label" tabindex="0">
-                <span class="md-nav__icon md-icon"></span>
-              </label>
-            
-          </div>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_7_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3_7">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    도구 · 환경
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-      
-        
-      
-        
-      
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_7_2" >
-        
-          
-          <label class="md-nav__link" for="__nav_3_7_2" id="__nav_3_7_2_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    마크다운
-  
-
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_7_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3_7_2">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    마크다운
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../environment/markdown/LaTeX%20%EC%88%98%EC%8B%9D%20%EC%A7%80%EC%9B%90/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    LaTeX 수식 지원
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../environment/markdown/Mermaid%20%EB%8B%A4%EC%9D%B4%EC%96%B4%EA%B7%B8%EB%9E%A8/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Mermaid 다이어그램
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-      
-        
-      
-        
-      
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_7_3" >
-        
-          
-          <label class="md-nav__link" for="__nav_3_7_3" id="__nav_3_7_3_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Container
-  
-
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_7_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3_7_3">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Container
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../environment/container/Docker/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Docker
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../environment/container/Podman/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Podman
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-      
-        
-      
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_7_4" >
-        
-          
-          <label class="md-nav__link" for="__nav_3_7_4" id="__nav_3_7_4_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    K8s
-  
-
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_7_4_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3_7_4">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    K8s
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../environment/k8s/Kubernetes/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Kubernetes
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
     
       
       
@@ -2694,7 +3174,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../../../projects/" class="md-nav__link ">
+            <a href="../../../../projects/" class="md-nav__link ">
               
   
   
@@ -2738,7 +3218,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../projects/FunOMIC2%20Nextflow%20Pipeline/" class="md-nav__link">
+      <a href="../../../../projects/FunOMIC2%20Nextflow%20Pipeline/" class="md-nav__link">
         
   
   
@@ -2766,7 +3246,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../projects/KLAS%20%28bibliographic%20information%29%20Macro/" class="md-nav__link">
+      <a href="../../../../projects/KLAS%20%28bibliographic%20information%29%20Macro/" class="md-nav__link">
         
   
   
@@ -2794,7 +3274,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../projects/KT%20Aivle%20Big%20Project/" class="md-nav__link">
+      <a href="../../../../projects/KT%20Aivle%20Big%20Project/" class="md-nav__link">
         
   
   
@@ -2851,14 +3331,14 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../../../blog/" class="md-nav__link ">
+            <a href="../../../../blog/" class="md-nav__link ">
               
   
   
   <span class="md-ellipsis">
     
   
-    블로그
+    Blog
   
 
     
@@ -2880,7 +3360,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    블로그
+    Blog
   
 
           </label>
@@ -2948,7 +3428,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../blog/archive/2026/" class="md-nav__link">
+      <a href="../../../../blog/archive/2026/" class="md-nav__link">
         
   
   
@@ -3039,7 +3519,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../blog/category/guide/" class="md-nav__link">
+      <a href="../../../../blog/category/guide/" class="md-nav__link">
         
   
   
@@ -3069,7 +3549,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../blog/category/work/" class="md-nav__link">
+      <a href="../../../../blog/category/work/" class="md-nav__link">
         
   
   
@@ -4315,12 +4795,12 @@ TGCGTA     □    □   ■   □   □        □
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../../../../..", "features": ["navigation.indexes"], "search": "../../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\ud074\ub9bd\ubcf4\ub4dc\uc5d0 \ubcf5\uc0ac\ub428", "clipboard.copy": "\ud074\ub9bd\ubcf4\ub4dc\ub85c \ubcf5\uc0ac", "search.result.more.one": "\uc774 \ubb38\uc11c\uc5d0\uc11c 1\uac1c\uc758 \uac80\uc0c9 \uacb0\uacfc \ub354 \ubcf4\uae30", "search.result.more.other": "\uc774 \ubb38\uc11c\uc5d0\uc11c #\uac1c\uc758 \uac80\uc0c9 \uacb0\uacfc \ub354 \ubcf4\uae30", "search.result.none": "\uac80\uc0c9\uc5b4\uc640 \uc77c\uce58\ud558\ub294 \ubb38\uc11c\uac00 \uc5c6\uc2b5\ub2c8\ub2e4", "search.result.one": "1\uac1c\uc758 \uc77c\uce58\ud558\ub294 \ubb38\uc11c", "search.result.other": "#\uac1c\uc758 \uc77c\uce58\ud558\ub294 \ubb38\uc11c", "search.result.placeholder": "\uac80\uc0c9\uc5b4\ub97c \uc785\ub825\ud558\uc138\uc694", "search.result.term.missing": "\ud3ec\ud568\ub418\uc9c0 \uc54a\uc740 \uac80\uc0c9\uc5b4", "select.version": "\ubc84\uc804 \uc120\ud0dd"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../../..", "features": ["navigation.indexes"], "search": "../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\ud074\ub9bd\ubcf4\ub4dc\uc5d0 \ubcf5\uc0ac\ub428", "clipboard.copy": "\ud074\ub9bd\ubcf4\ub4dc\ub85c \ubcf5\uc0ac", "search.result.more.one": "\uc774 \ubb38\uc11c\uc5d0\uc11c 1\uac1c\uc758 \uac80\uc0c9 \uacb0\uacfc \ub354 \ubcf4\uae30", "search.result.more.other": "\uc774 \ubb38\uc11c\uc5d0\uc11c #\uac1c\uc758 \uac80\uc0c9 \uacb0\uacfc \ub354 \ubcf4\uae30", "search.result.none": "\uac80\uc0c9\uc5b4\uc640 \uc77c\uce58\ud558\ub294 \ubb38\uc11c\uac00 \uc5c6\uc2b5\ub2c8\ub2e4", "search.result.one": "1\uac1c\uc758 \uc77c\uce58\ud558\ub294 \ubb38\uc11c", "search.result.other": "#\uac1c\uc758 \uc77c\uce58\ud558\ub294 \ubb38\uc11c", "search.result.placeholder": "\uac80\uc0c9\uc5b4\ub97c \uc785\ub825\ud558\uc138\uc694", "search.result.term.missing": "\ud3ec\ud568\ub418\uc9c0 \uc54a\uc740 \uac80\uc0c9\uc5b4", "select.version": "\ubc84\uc804 \uc120\ud0dd"}, "version": null}</script>
     
     
-      <script src="../../../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.79ae519e.min.js"></script>
       
-        <script src="../../../../../javascripts/mathjax.js"></script>
+        <script src="../../../../javascripts/mathjax.js"></script>
       
         <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
