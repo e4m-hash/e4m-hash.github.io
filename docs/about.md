@@ -9,7 +9,6 @@
 - 자격증: KT AI Associate
 - 강연: [전북대학교 식품연구센터 세미나](http://_ssp._domainkey.ctcf2.com/bbs/board.php?bo_table=com_article&wr_id=427&sst=wr_hit&sod=asc&sop=and&page=7&device=mobile)
 
-
 ## Research Interests
 ### Microbiome Analysis
 - Amplicon Sequencing : 16S/ITS

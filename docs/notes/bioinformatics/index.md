@@ -15,8 +15,3 @@
 - **전처리** — nf-core/ampliseq
 - **분류 프로파일링** — Kraken2/Bracken, MetaPhlAn4 (HRGM2)
 - **기능 프로파일링** — PICRUSt2, HUMAnN3 (ChocoPhlAn, UniRef90)
-
-## 정리 예정 / 진행 중
-
-- [ ] ITS 앰플리콘 워크플로
-- [ ] 분류/기능 프로파일링 결과 해석 노트

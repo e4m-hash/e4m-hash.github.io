@@ -24,8 +24,8 @@ graph LR
 
 ## 사용 언어
 
-| 언어     | 용도                  | 주요 라이브러리                                                                                               |
-| ------ | ------------------- | ------------------------------------------------------------------------------------------------------ |
-| Python | 분석 · 생물정보 주력        | pandas, numpy, scipy / matplotlib, seaborn / biopython, scikit-bio / scikit-learn, PyTorch, TensorFlow |
-| R      | 통계 분석 · 전용 생물정보 패키지 | SPIEC-EASI 등                                                                                           |
-| C++    | 고성능 연산 · 알고리즘 구현    | Prodigal 등                                                                                             |
+| 언어     | 주요 라이브러리                                                                                               |
+| ------ | ------------------------------------------------------------------------------------------------------ |
+| Python | pandas, numpy, scipy / matplotlib, seaborn / biopython, scikit-bio / scikit-learn, PyTorch, TensorFlow |
+| R      | SPIEC-EASI 등                                                                                           |
+| C++    | Prodigal                                                                                               |

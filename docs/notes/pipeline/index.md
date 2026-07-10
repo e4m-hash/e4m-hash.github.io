@@ -14,5 +14,3 @@
 - [ ] nf-core 파이프라인 커스터마이징(ampliseq, taxprofiler)
 - [ ] Docker/Podman 이미지 빌드 · Singularity 변환
 - [ ] HPC / Kubernetes 실행 프로파일
-
-→ 관련 프로젝트: [FunOMIC2 Nextflow Pipeline](<../../projects/FunOMIC2 Nextflow Pipeline.md>)

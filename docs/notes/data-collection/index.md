@@ -14,5 +14,3 @@
 - [ ] Selenium 기반 동적 페이지 스크래핑 패턴
 - [ ] RESTful API 페이지네이션 · 인증 처리
 - [ ] HTML / JSON 파싱 유틸 정리
-
-→ 관련 프로젝트: [KLAS 서지정보 매크로](<../../projects/KLAS (bibliographic information) Macro.md>)
