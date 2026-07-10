@@ -1,3 +1,5 @@
+# Bracken
+
 # 정의
 Bracken(Bayesian Reestimation of Abundance with KrakEN)은
 메타게놈(Metagenomics) 데이터에서 미생물 종(Species)이나 속(Genus) 수준의 상대적 풍부도(Abundance)를 고정밀로 재추정해 주는 생물정보학 통계 도구입니다.
