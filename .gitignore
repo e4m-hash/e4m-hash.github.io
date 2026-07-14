@@ -10,7 +10,3 @@ __pycache__/
 .vscode/settings.json
 .obsidian/
 .trash/
-
-# Claude
-CLAUDE.md
-.claude
