@@ -1,0 +1,8 @@
+title: 모델 평가
+nav:
+  - index.md
+  - "Baseline과 실험 설계.md"
+  - "분류와 회귀 평가지표.md"
+  - "불균형 데이터와 Calibration.md"
+  - "오류 분석과 설명 가능성.md"
+  - ...

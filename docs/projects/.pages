@@ -1,7 +1,6 @@
 title: 프로젝트
 nav:
   - index.md
-  - MetaScale: MetaScale.md
   - FunOMIC2 Nextflow Pipeline: "FunOMIC2 Nextflow Pipeline.md"
   - KT Aivle Big Project: "KT Aivle Big Project.md"
   - KLAS 서지정보 매크로: "KLAS Macro.md"

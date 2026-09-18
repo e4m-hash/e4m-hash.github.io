@@ -1,9 +1,9 @@
 # Bioinformatics
 
-MetaScale의 입력 데이터와 제약을 설명하는 domain layer입니다. 이 탭은 생물학 자체를
+ML 프로젝트의 입력 데이터와 제약을 설명하는 domain layer입니다. 이 탭은 생물학 자체를
 포트폴리오의 중심으로 두기보다, ML pipeline과 평가 설계에 영향을 주는 조건을 기록합니다.
 
-## MetaScale에 필요한 도메인 제약
+## ML 프로젝트에 필요한 도메인 제약
 
 - FASTQ와 sample metadata의 pair·checksum·identifier 검증
 - reference DB와 profiling pipeline에 따라 달라지는 feature schema

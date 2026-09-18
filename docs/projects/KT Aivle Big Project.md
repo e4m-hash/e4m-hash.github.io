@@ -58,9 +58,9 @@ flowchart LR
 - [ML 저장소](https://github.com/e4m98/Aivle_machine)
 - [Spring 저장소](https://github.com/e4m98/AivleBigSpring)
 - [React 저장소](https://github.com/e4m98/AivleBigReact)
-- [과제 정의서 1](attachments/AI_19조_조별과제정의서-1.png)
-- [과제 정의서 2](attachments/AI_19조_조별과제정의서-2.png)
-- [과제 정의서 3](attachments/AI_19조_조별과제정의서-3.png)
+- [과제 정의서 1](001-AI_19조_조별과제정의서-1.png)
+- [과제 정의서 2](002-AI_19조_조별과제정의서-2.png)
+- [과제 정의서 3](003-AI_19조_조별과제정의서-3.png)
 
 ## 한계
 

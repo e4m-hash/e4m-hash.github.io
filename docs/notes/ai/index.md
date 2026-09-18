@@ -5,12 +5,12 @@
 
 ## 하위 분야
 
-- [**머신러닝**](machine-learning/index.md) — 지도/비지도 학습, RandomForest, 평가지표
+- [**머신러닝**](machine-learning/index.md) — 기초 모델링, 평가, ML Engineering과 커리어 준비
 - [**딥러닝**](deep-learning/index.md) — 신경망, BERT/DNABERT-2, LLM 통합(Ollama, HuggingFace)
 - [**Bioinformatics 논문 리뷰**](../../papers/index.md) — domain-specific ML 논문
 
 모델을 데이터 검증·서빙·모니터링과 연결하는 내용은
-[ML Engineering](../ml-engineering/index.md)에서 정리합니다.
+[ML Engineering](machine-learning/engineering/index.md)에서 정리합니다.
 
 ## 정리 예정 / 진행 중
 

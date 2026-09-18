@@ -23,27 +23,27 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v7.0.1
         with:
           fetch-depth: 0   # RSS 플러그인이 글의 git 날짜를 올바르게 읽도록 전체 이력 확보
-      - uses: actions/setup-python@v6
+      - uses: actions/setup-python@v7.0.0
         with:
-          python-version: 3.x
+          python-version: "3.13"
       - name: Install dependencies
         run: >-
           python -m pip install
-          mkdocs-material
-          mkdocs-awesome-pages-plugin
-          mkdocs-roamlinks-plugin
-          mkdocs-rss-plugin
+          mkdocs-material==9.7.7
+          mkdocs-awesome-pages-plugin==2.10.1
+          mkdocs-roamlinks-plugin==0.3.2
+          mkdocs-rss-plugin==1.19.0
       - name: Build site
         run: mkdocs build --clean
       - name: Configure GitHub Pages
-        uses: actions/configure-pages@v5
+        uses: actions/configure-pages@v6.0.0
       - name: Upload Pages artifact
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v5.0.0
         with:
           path: site
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5.0.0

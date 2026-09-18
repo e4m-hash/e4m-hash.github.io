@@ -56,7 +56,7 @@ flowchart LR
 - 실패한 실행을 처음부터 반복하지 않기
 - pipeline version과 reference DB가 결과에 미치는 영향 기록하기
 
-이 경험을 [[MetaScale]]의 feature 생성 pipeline과 데이터 lineage 설계로 이어갈 계획입니다.
+이 경험을 후속 ML 프로젝트의 feature 생성 pipeline과 데이터 lineage 설계에 적용합니다.
 
 ## 확인 가능한 근거
 

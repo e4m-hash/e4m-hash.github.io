@@ -1,1 +1,10 @@
 title: 머신러닝
+nav:
+  - index.md
+  - foundations
+  - data
+  - models
+  - evaluation
+  - engineering
+  - career
+  - ...

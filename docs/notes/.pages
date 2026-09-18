@@ -1,7 +1,6 @@
 title: 노트
 nav:
   - index.md
-  - ml-engineering
   - ai
   - pipeline
   - data-collection

@@ -11,3 +11,7 @@ __pycache__/
 .obsidian/
 .trash/
 AGENTS.md
+
+# 로컬 동기화 상태
+.owncloudsync.log
+.sync_journal.db*

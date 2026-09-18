@@ -7,7 +7,7 @@ created: 2025-09-04
 description: "The human gut microbiome, crucial in various diseases, can be utilized to develop diagnostic models through machine learning (ML). The specific tools and parameters used in model construction such as data preprocessing, batch effect removal and ..."
 ---
 # PDF
-[[분자생물학특론 5.21.pdf]]
+[[001-분자생물학특론-5.21.pdf]]
 
 # Title
 
@@ -61,6 +61,34 @@ description: "The human gut microbiome, crucial in various diseases, can be util
 
 - 결론적 메시지
   - 데이터 전처리, 배치 교정, 알고리즘 선택을 단계적으로 최적화하면 다수 질환에 걸쳐 적용 가능한 견고한 마이크로바이옴 기반 진단 모델 구축이 가능하다. 특히 ComBat을 이용한 배치 제거와 Ridge/Random Forest 알고리즘의 사용이 권장되며, 제시된 워크플로우는 향후 임상적·연구적 진단 도구 개발에 유용한 지침을 제공한다.
+
+## Figure 해설
+
+그래프에서 internal validation은 같은 코호트 안에서 수행한 교차검증, external validation은 다른 코호트에 적용한 검증을 뜻한다. 전처리 조합은 `Filtered_Rescale_Normalized_Confounder` 순서이며, `T`는 적용, `F`는 미적용이다.
+
+### Figure 1. 연구 설계와 데이터 구성
+
+- **Figure 1a**: 장내 미생물의 16S rRNA 또는 WGS 상대풍부도 자료를 입력으로 받아 전처리, 배치 효과 제거, 알고리즘 선택을 차례로 최적화하는 전체 흐름이다. 전처리는 저풍부도 feature filtering, rescaling, normalization, confounder correction의 네 단계로 나뉜다. 각 선택의 결과는 internal/external AUC로 평가하고, 배치 교정은 AUC뿐 아니라 배치가 설명하는 분산인 $R^2$도 함께 확인한다.
+- **Figure 1b**: 16S 46개와 WGS 37개, 총 83개 코호트의 구성을 질병별로 나타낸 heatmap이다. 질병군 5,988명과 대조군 4,411명, 20개 질병이 포함되며 장, 대사, 정신·신경, 자가면역, 간 질환으로 묶었다. 질병마다 코호트 수와 표본 수가 크게 달라서, 같은 코호트 안의 성능뿐 아니라 다른 코호트로 일반화되는지도 평가해야 한다.
+
+### Figure 2. 전처리 방법 선택
+
+- **Figure 2a**: 저풍부도 미생물을 제거하지 않은 경우와 0.001%, 0.005%, 0.01%, 0.05% cutoff를 비교한다. 0.001%의 internal AUC 중앙값은 0.71로 무필터링과 같고 external AUC도 0.57로 유지된다. 반면 더 높은 cutoff는 internal AUC를 낮출 수 있다. 0.001%가 통계적으로 성능을 높인 것은 아니지만, 성능 손실 없이 희소한 feature를 줄이는 값이라 이후 분석에 사용했다.
+- **Figure 2b**: 무정규화와 여섯 가지 normalization을 비교한다. `rank.std`와 `rank.unit`의 internal AUC가 0.79로 가장 높았고, `rank.std`는 external validation에서도 약 0.60을 유지했다. 따라서 feature를 순위로 바꾼 뒤 z-score를 적용하는 `rank.std`를 후속 분석의 기본 normalization으로 선택했다.
+- **Figure 2c**: 16개 전처리 조합 중 `F_T_T_F`, `T_F_T_F`, `T_T_T_F`, `F_F_T_F`가 대조군 `F_F_F_F`보다 높은 AUC를 보였다. 네 조합의 공통점은 `rank.std` normalization을 적용하고 confounder correction은 적용하지 않았다는 점이다. Filtering과 rescaling의 적용 여부보다 normalization의 유무가 더 일관된 차이를 만들었다.
+
+### Figure 3. 각 전처리 단계의 기여도와 방향
+
+- **Figure 3a**: PERMANOVA로 AUC 차이의 설명분산을 나눈 결과다. Normalization은 internal 60.50%, external 48.62%, confounder correction은 각각 23.68%, 28.99%를 설명했다. Filtering과 rescaling의 기여도는 상대적으로 작았다. 이 패널은 영향의 크기만 보여주며, 성능을 올렸는지 내렸는지는 Figure 3b에서 확인해야 한다.
+- **Figure 3b**: Wilcoxon rank-sum test로 각 단계의 적용 전후 AUC 방향을 비교한다. Normalization은 internal과 external AUC를 유의하게 높였지만, confounder correction은 둘 다 낮췄다. Filtering과 rescaling은 유의한 차이가 없었다. 여기서 confounder correction은 연령, 성별, BMI 같은 생물학적·임상 변수의 보정이며, 뒤에서 다루는 코호트 간 batch correction과는 다른 단계다.
+
+### Figure 4. 배치 교정, 알고리즘 비교와 최종 workflow
+
+- **Figure 4a**: 배치 교정을 하지 않은 대조군과 `limma`, `MMUPHin`, `sva`를 비교한다. Internal AUC는 0.71에서 0.72–0.74로 변했지만 유의하지 않았다. External AUC에서는 `sva`의 ComBat이 0.58로 대조군 0.57보다 소폭 높았고 유의한 차이를 보였다. 절대 차이가 작기 때문에 AUC만으로 배치 제거 성능을 판단하기는 어렵다.
+- **Figure 4b**: 교정 전후 배치가 설명하는 분산 $R^2$를 비교한다. $R^2$가 0에 가까울수록 배치 정보가 적게 남았다는 뜻이다. `MMUPHin`과 `sva`는 교정 후 $R^2$를 유의하게 낮췄지만($p<0.0001$), `limma`는 일부 데이터에서 오히려 높아졌다. Figure 4a의 AUC까지 함께 고려해 `sva::ComBat`을 최종 batch correction으로 선택했다.
+- **Figure 4c**: Random Forest와 Ridge를 네 가지 우수 전처리 조합에서 비교한다. 이 조합에서는 Ridge의 external AUC가 약 0.62–0.625로 Random Forest의 0.61보다 조금 높다. 다만 이 결과는 normalization 중심의 동일 전처리를 두 알고리즘에 적용한 비교이므로, 전처리에 덜 민감한 Random Forest의 최적 조건까지 뜻하지는 않는다.
+- **Figure 4d**: 각 알고리즘에 가장 적합한 전처리를 적용한 뒤 external AUC를 비교한다. 중앙값은 Random Forest 0.640, Ridge 0.635로 가장 높았고 Radial SVM 0.617, Lasso와 Enet 0.610이 뒤를 이었다. 즉 하나의 전처리를 모든 모델에 공통 적용하기보다 알고리즘별 전처리를 먼저 맞춘 뒤 비교해야 한다.
+- **Figure 4e**: 최종적으로 Ridge용 네 개 workflow와 Random Forest용 한 개 workflow를 제안한다. Ridge는 filtering과 rescaling을 적용하거나 생략할 수 있지만 `rank.std` normalization을 적용하고 confounder correction은 하지 않는다. Random Forest는 저풍부도 feature만 제거하고 rescaling과 normalization, confounder correction은 생략한다. 두 경로 모두 `sva::ComBat`으로 batch correction을 수행한다. 그림에는 cutoff가 `0.01`로 보이지만, 본문과 Figure 2에서 최종 선택한 기준은 **0.001%**이므로 발표에서는 본문 기준으로 설명하는 편이 안전하다.
 
 # Content
 ### PMC Search Update
@@ -222,8 +250,6 @@ ComBat는 강력한 모델 성능을 유지하면서 배치 효과를 효과적�
 In this study, we compared three methods for batch effect removal: the “removeBatchEffect” function from the *limma* R package, the “adjust\_batch” function from the *MMUPHin* R package, and the “ComBat” function from the *sva* R package. First, we compared the AUCs of models using these three batch effect removal methods with those of models without batch effect removal. In terms of median AUCs, none of the three methods significantly improved the AUCs ([Figure 4a](https://pmc.ncbi.nlm.nih.gov/articles/PMC11980492/#f0004)). While in the external validation results, the models with batch effect removed by the “ComBat” function from the *sva* R package had a slightly higher median AUC (0.58) compared to 0.57 for the models without batch effect removal, with a significant difference between the groups (*p*  < 0.01) ([Figure 4a](https://pmc.ncbi.nlm.nih.gov/articles/PMC11980492/#f0004)).
 
 이 연구에서는 *limma* R 패키지의 "removeBatchEffect" 함수, *MMUPHin* R 패키지의 "adjust\_batch" 함수, *sva* R 패키지의 "ComBat" 함수의 세 가지 배치 효과 제거 방법을 비교했습니다. 먼저, 이 세 가지 배치 효과 제거 방법을 사용하는 모델의 AUC를 배치 효과 제거가 없는 모델의 AUC를 비교했습니다. AUC 중앙값 측면에서 세 가지 방법 중 어느 것도 AUC를 유의하게 개선하지 못했습니다([그림 4a](https://pmc.ncbi.nlm.nih.gov/articles/PMC11980492/#f0004)). 외부 검증 결과에서 *sva* R 패키지에서 "ComBat" 함수에 의해 배치 효과가 제거된 모델은 배치 효과가 제거되지 않은 모델의 0.57에 비해 AUC 중앙값(0.58)이 약간 더 높았으며 그룹 간에 상당한 차이가 있었습니다(*p* < 0.01)([그림 4a](https://pmc.ncbi.nlm.nih.gov/articles/PMC11980492/#f0004)).
-
-![[Pasted image 20250922160010.png]]
 
 
 Comparison of batch effect removal methods and algorithms and summary of optimal machine learning methods for gut microbiome-based model construction. a. The violin plot compares the performance of models generated using three batch effect removal methods with those generated without batch effect removal. The plot annotates the median AUCs for both internal and external validations, with p values calculated using the Two sides Wilcoxon rank-sum test.

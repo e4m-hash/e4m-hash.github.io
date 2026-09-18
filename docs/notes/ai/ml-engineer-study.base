@@ -1,0 +1,50 @@
+filters:
+  and:
+    - or:
+        - file.inFolder("docs/notes/ai/machine-learning")
+        - file.inFolder("docs/notes/ai/deep-learning")
+    - file.ext == "md"
+    - type == "ml-note"
+properties:
+  file.name:
+    displayName: 노트
+  area:
+    displayName: 영역
+  priority:
+    displayName: 우선순위
+  status:
+    displayName: 상태
+  updated:
+    displayName: 수정일
+views:
+  - type: table
+    name: 전체 학습 노트
+    groupBy:
+      property: area
+      direction: ASC
+    order:
+      - file.name
+      - area
+      - priority
+      - status
+      - updated
+  - type: table
+    name: P0 우선순위
+    filters:
+      and:
+        - priority == "P0"
+    order:
+      - file.name
+      - area
+      - status
+      - updated
+  - type: table
+    name: 진행 중
+    filters:
+      and:
+        - status == "in-progress"
+    order:
+      - file.name
+      - area
+      - priority
+      - updated

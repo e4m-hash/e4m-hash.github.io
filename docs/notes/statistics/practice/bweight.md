@@ -1,7 +1,7 @@
 # 통계분석
 ## 분기
 
-![[Pasted image 20250915212315.png]]
+![[001-Pasted-image-20250915212315.png]]
 
 
 ## 개념
@@ -142,10 +142,10 @@ print(m_status_rob.summary().tables[1])
 ```
 ### 결과
 -> "HC3"
-![[Pasted image 20250916152417.png]]
+![[002-Pasted-image-20250916152417.png]]
 
 -> "HC1"
-![[Pasted image 20250916153613.png]]
+![[003-Pasted-image-20250916153613.png]]
 근거(OLS, 모형: Weight ~ C(MomSmoke)+Boy)
 - C(MomSmoke) = −241.764
 - SE=7.568
@@ -199,10 +199,10 @@ print(m_dose_rob.summary().tables[1])
 ```
 ### 결과
 -> "HC3"
-![[Pasted image 20250916152518.png]]
+![[004-Pasted-image-20250916152518.png]]
 
 -> "HC1"
-![[Pasted image 20250916153457.png]]
+![[005-Pasted-image-20250916153457.png]]
 - 흡연량 ($\hat \beta$) = -3.6342
 - SE = 0.954
 - p < 0.001

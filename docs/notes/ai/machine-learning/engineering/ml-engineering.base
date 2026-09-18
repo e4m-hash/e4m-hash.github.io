@@ -1,0 +1,25 @@
+filters:
+  and:
+    - file.inFolder("docs/notes/ai/machine-learning/engineering")
+    - file.ext == "md"
+    - type == "ml-note"
+properties:
+  file.name:
+    displayName: 노트
+  area:
+    displayName: 영역
+  priority:
+    displayName: 우선순위
+  status:
+    displayName: 상태
+  updated:
+    displayName: 수정일
+views:
+  - type: table
+    name: ML Engineering 노트
+    order:
+      - file.name
+      - area
+      - priority
+      - status
+      - updated

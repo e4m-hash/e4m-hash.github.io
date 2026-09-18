@@ -1,9 +1,10 @@
 filters:
   or:
     - type == "project"
-    - type == "milestone"
+    - type == "skill-map"
+    - type == "ml-note"
 formulas:
-  status_label: if(status == "completed", "✅ 완료", if(status == "in-progress", "🚧 진행", "📌 예정"))
+  status_label: if(status == "completed", "✅ 완료", if(status == "in-progress", "🚧 진행", if(status == "active", "📝 정리", "📌 예정")))
   evidence_gap: if(type == "project" && (!evidence.contains("code") || !evidence.contains("benchmark")), "보완 필요", "")
 properties:
   file.name:
@@ -18,16 +19,10 @@ properties:
     displayName: 포지션
   evidence:
     displayName: 확인 가능
-  phase:
-    displayName: 단계
-  week:
-    displayName: 주차
   priority:
     displayName: 우선순위
-  deliverable:
-    displayName: 완료 산출물
-  related_project:
-    displayName: 프로젝트
+  area:
+    displayName: 영역
   updated:
     displayName: 갱신일
 views:
@@ -43,21 +38,22 @@ views:
       - formula.evidence_gap
       - updated
   - type: table
-    name: Active Milestones
-    filters:
-      and:
-        - type == "milestone"
-        - status != "completed"
-    groupBy:
-      property: phase
-      direction: ASC
+    name: Skill Stack
+    filters: type == "skill-map"
     order:
       - file.name
+      - target_role
       - formula.status_label
-      - week
+      - updated
+  - type: table
+    name: Technical Notes
+    filters: type == "ml-note"
+    order:
+      - file.name
+      - area
       - priority
-      - deliverable
-      - related_project
+      - formula.status_label
+      - updated
   - type: table
     name: Evidence Gaps
     filters:

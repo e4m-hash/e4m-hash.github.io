@@ -1,6 +1,0 @@
-title: ML Engineering
-nav:
-  - index.md
-  - "데이터와 학습 파이프라인.md"
-  - "평가와 신뢰성.md"
-  - "서빙과 운영.md"
